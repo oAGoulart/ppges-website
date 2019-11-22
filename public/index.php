@@ -1,4 +1,4 @@
-<?php include( 'head.php' ) ?>
+<?php include __DIR__ . PATH_SEPARATOR . 'head.php' ?>
   <!-- Non-Sticky Navbar -->
   <nav id="nav">
     <div class="container text-uppercase font-weight-bold">
@@ -195,4 +195,4 @@
     </div>
   </footer>
 
-<?php include( 'foot.php' ) ?>
+<?php include __DIR__ . PATH_SEPARATOR . 'foot.php' ?>
