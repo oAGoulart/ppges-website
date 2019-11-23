@@ -35,7 +35,7 @@
               );
 
               for ($i = 0; $i < 4; $i++) {
-                echo '<li class="list-group-item">'
+                echo '<li class="list-group-item">';
 
                 $item = $links[array_rand($links)];
                 printf('<a href="%s" title="%s">%s</a>', $item['url'], $item['name'], $item['name']);
