@@ -8,7 +8,7 @@
 
   $html = markdown2html(file_get_contents('assets/markdown/pt/sobre.md'));
 
-  include 'assets/templates/pt/post.php'
+  include 'assets/templates/pt/post.php';
 
   include "assets/templates/$lang/footer.php";
   include 'assets/templates/foot.php';
