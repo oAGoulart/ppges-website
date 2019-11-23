@@ -4,7 +4,7 @@
   <title>error</title>
 </head>
 <body>
-  <?php echo 'Error:' , http_response_code() ?>
+  <?php echo 'Error:' , $_SERVER["REDIRECT_STATUS"] ?>
 
 </body>
 </html>
