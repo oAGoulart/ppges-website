@@ -1,9 +1,21 @@
-RewriteEngine on
+RewriteEngine On
 
+# Important to some servers
+RewriteBase /
+
+# Redirect requests starting with www to non-www url
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# Unless directory, remove trailing slash
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)/ $1 [301, L]
+RewriteRule ^([^/]+)/$ ./$1 [R=301,L]
 
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.*) $1.php [L]
+# Redirect external .php requests to extensionless url
+RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
+RewriteRule ^(.+)\.php$ ./$1 [R=301,L]
+
+# Resolve .php file for extensionless php urls
+RewriteRule ^([^/.]+)$ $1.php [L]
 
 ErrorDocument 404 /error.php
