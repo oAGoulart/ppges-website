@@ -31,9 +31,9 @@
 
   <?php
     if ( isset( $page_title ) ) {
-      echo "<title>$page_title | Programa de Pós-Graduação em Engenharia de Software (PPGES)</title>"
+      echo "<title>$page_title | Programa de Pós-Graduação em Engenharia de Software (PPGES)</title>";
     } else {
-      echo '<title>Programa de Pós-Graduação em Engenharia de Software (PPGES)</title>'
+      echo '<title>Programa de Pós-Graduação em Engenharia de Software (PPGES)</title>';
     }
   ?>
 </head>

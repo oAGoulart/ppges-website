@@ -195,4 +195,4 @@
     </div>
   </footer>
 
-<?php include 'foot.php';
+<?php include 'assets/templates/foot.php';
