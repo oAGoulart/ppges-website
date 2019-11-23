@@ -11,6 +11,8 @@
         <div class="col-sm-9">
           <p>
             <?php
+              require_once 'vendor/autoload.php';
+              
               $file = file_get_contents('assets/markdown/sobre.md');
               echo Parsedown::instance()->text($file);
             ?>
