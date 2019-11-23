@@ -8,7 +8,7 @@
   include "assets/templates/$lang/non_sticky_nav.php";
   include "assets/templates/$lang/sticky_header.php";
 
-  $html = "<p>${query}</p>";
+  echo "<p>${query}</p>";
   $filter = ['name' => $query];
   $options = [];
 
@@ -17,8 +17,6 @@
   foreach ($rows as $r) {
     var_dump($r);
   }
-
-  include 'assets/templates/pt/post.php';
 
   include "assets/templates/$lang/footer.php";
   include 'assets/templates/foot.php';
