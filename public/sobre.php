@@ -31,22 +31,15 @@
 
         <!-- Discover Links -->
         <div class="col-sm-3">
-          <?php
-            $options = [
-              'currentAsLink' => false,
-              'currentClass'  => 'list-group-item',
-              'ancestorClass' => 'list-group-item text-uppercase',
-              'branch_class'  => 'list-group discover-links'
-            ];
+          <ul class="list-group discover-links">
+            <li class="list-group-item text-uppercase">Índice</li>
+            <?php
+              $tocGenerator = new TOC\TocGenerator();
+              $list = $tocGenerator->getHtmlMenu($html, 1, 6);
 
-            $renderer = new Knp\Menu\Renderer\ListRenderer(new Knp\Menu\Matcher\Matcher(), $options);
-
-            // Render the list
-            $tocGenerator = new TOC\TocGenerator();
-            $list = $tocGenerator->getHtmlMenu($html, 1, 6, $renderer);
-
-            echo $list;
-          ?>
+              echo $list;
+            ?>
+          </ul>
           <ul class="list-group discover-links">
             <li class="list-group-item text-uppercase">Descubra Mais</li>
             <li class="list-group-item">
