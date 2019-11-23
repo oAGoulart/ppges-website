@@ -13,20 +13,18 @@
       <div class="row">
         <!-- Main Text Body -->
         <div class="col-sm-9">
-          <p>
-            <?php
-              $markupFixer = new TOC\MarkupFixer();
+          <?php
+            $markupFixer = new TOC\MarkupFixer();
 
-              $file = file_get_contents('assets/markdown/pt/sobre.md');
-              $html = Parsedown::instance()->text($file);
+            $file = file_get_contents('assets/markdown/pt/sobre.md');
+            $html = Parsedown::instance()->text($file);
 
-              $html = $markupFixer->fix($html);
+            // add style class to all headers
+            for ($i = 1; $i <= 6; $i++)
+              $html = str_replace("<h${i}>", "<h${i} class=\"title-anchor\">", $html);
 
-              // add style class to all headers
-              for ($i = 1; $i <= 6; $i++)
-                $html = str_replace("<h${i}>", "<h${i} class=\"title-anchor\">", $html);
-            ?>
-          </p>
+            $html = $markupFixer->fix($html);
+          ?>
         </div>
 
         <!-- Discover Links -->
