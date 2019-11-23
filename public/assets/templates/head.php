@@ -32,7 +32,7 @@
   }
 
   // connect to the database
-  $client = new MongoDB\Client(getenv('MONGODB_URI'));
+  $client = new MongoDB\Driver\Manager(getenv('MONGODB_URI'));
   $db = $client->test;
 ?>
 
