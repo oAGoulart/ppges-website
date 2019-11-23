@@ -32,13 +32,14 @@
   }
 
   // connect to the database
-  $manager = new MongoDB\Driver\Manager(getenv('MONGODB_URI'));
-  $stats = new MongoDB\Driver\Command(["dbstats" => 1]);
-  $res = $manager->executeCommand("testdb", $stats);
-    
-  $stats = current($res->toArray());
-
-  print_r($stats);
+  try {
+    $manager = new MongoDB\Driver\Manager(getenv('MONGODB_URI'));
+    $stats = new MongoDB\Driver\Command(["dbstats" => 1]);
+  }
+  catch(Exception $e) {
+    header("HTTP/1.1 500 Internal Server Error");
+    throw $e;
+  }
 ?>
 
 <!DOCTYPE html>
