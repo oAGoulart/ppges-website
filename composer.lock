@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3abc68e0c2b098d417df1b07ed774851",
+    "content-hash": "4b9e54e93c348b06d0d77af2ee9a6da1",
     "packages": [
         {
             "name": "caseyamcl/toc",
@@ -315,7 +315,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3"
+        "php": "^7.3",
+        "ext-mongodb": "*"
     },
     "platform-dev": []
 }

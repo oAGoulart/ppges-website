@@ -1,6 +1,7 @@
 {
   "require": {
     "php": "^7.3",
+    "ext-mongodb": "*",
     "caseyamcl/toc": "^2.0",
     "erusev/parsedown": "^1.7"
   }
