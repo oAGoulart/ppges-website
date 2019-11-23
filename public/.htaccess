@@ -1,0 +1,8 @@
+AllowOverride All
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)\/[a-zA-Z0-9\-\_\.]+ $1.php [L]
+
+ErrorDocument 404 /error.php
