@@ -39,7 +39,7 @@
               for ($i = 0; $i < 4; $i++) {
                 echo '<li class="list-group-item">';
 
-                printf('<a href="%s" title="%s">%s</a>', $item[$i]['url'], $item[$i]['name'], $item[$i]['name']);
+                printf('<a href="%s" title="%s">%s</a>', $items[$i]['url'], $items[$i]['name'], $items[$i]['name']);
 
                 echo '</li>';
               }
