@@ -103,6 +103,11 @@ main {
 
 .discover-links {
   margin-top: 3.5rem;
+  list-style: none;
+}
+
+ul.discover-links ul {
+  list-style: none;
 }
 
 .title-anchor {
