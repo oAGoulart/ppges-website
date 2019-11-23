@@ -9,6 +9,7 @@
   include "assets/templates/$lang/sticky_header.php";
 
   $html = "<p>${query}</p>";
+  echo $stats;
 
   include 'assets/templates/pt/post.php';
 
