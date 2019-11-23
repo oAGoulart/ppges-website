@@ -26,26 +26,23 @@
           </ul>
           <ul class="list-group discover-links">
             <li class="list-group-item text-uppercase">Descubra Mais</li>
-            <li class="list-group-item">
-              <a href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/coordenacao'; ?>>
-                Coordenação
-              </a>
-            </li>
-            <li class="list-group-item">
-              <a href="<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/professores'; ?>">
-                Professores Orientadores
-              </a>
-            </li>
-            <li class="list-group-item">
-              <a href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/alunos'; ?>>
-                Alunos
-              </a>
-            </li>
-            <li class="list-group-item">
-              <a href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/seminarios'; ?>>
-                Ciclo de Seminários e Palestras
-              </a>
-            </li>
+            <?php
+              $links = array(
+                array('url' => "https://$_SERVER['SERVER_NAME']/coordenacao", 'name'=>'Coordenação'),
+                array('url' => "https://$_SERVER['SERVER_NAME']/professores", 'name'=>'Professores Orientadores'),
+                array('url' => "https://$_SERVER['SERVER_NAME']/alunos", 'name'=>'Alunos'),
+                array('url' => "https://$_SERVER['SERVER_NAME']/seminarios", 'name'=>'Ciclo de Seminários e Palestras')
+              );
+
+              for ($i = 0; $i < 4; $i++) {
+                echo '<li class="list-group-item">'
+
+                $item = $links[array_rand($links)];
+                printf('<a href="%s" title="%s">%s</a>', $item['url'], $item['name'], $item['name']);
+
+                echo '</li>'
+              }
+            ?>
           </ul>
         </div>
       </div>
