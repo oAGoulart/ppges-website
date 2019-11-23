@@ -1,14 +1,12 @@
 <?php
   // verify page language
   if ( isset( $_COOKIE['lang'] ) ) {
-    if ( !isset( $lang ) ) {
+    if ( !isset( $lang ) )
       $lang = $_COOKIE['lang'];
-    }
   }
   else {
-    if ( !isset( $lang ) ) {
+    if ( !isset( $lang ) )
       $lang = 'pt';
-    }
 
     setcookie( 'lang', $lang, time() + 60*60*24*30, '/' );
   }
@@ -31,12 +29,10 @@
   <link rel="stylesheet" href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/assets/css/styles.css'; ?>>
 
   <?php
-    if ( isset( $page_title ) ) {
+    if ( isset( $page_title ) )
       echo "<title>$page_title | Programa de Pós-Graduação em Engenharia de Software (PPGES)</title>";
-    }
-    else {
+    else
       echo '<title>Programa de Pós-Graduação em Engenharia de Software (PPGES)</title>';
-    }
   ?>
 </head>
 <body>
