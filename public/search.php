@@ -8,7 +8,9 @@
   include "assets/templates/$lang/non_sticky_nav.php";
   include "assets/templates/$lang/sticky_header.php";
 
-  echo $query;
+  $html = "<p>${query}</p>";
+
+  include 'assets/templates/pt/post.php';
 
   include "assets/templates/$lang/footer.php";
   include 'assets/templates/foot.php';
