@@ -15,7 +15,7 @@
   $q = new MongoDB\Driver\Query($filter, $options);
   $rows = $manager->executeQuery('sample_mflix.comments', $q); 
   foreach ($rows as $r) {
-    pr($r);
+    print($r);
   }
 
   include 'assets/templates/pt/post.php';
