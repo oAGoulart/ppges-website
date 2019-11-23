@@ -34,9 +34,6 @@
   // connect to the database
   try {
     $manager = new MongoDB\Driver\Manager(getenv('MONGODB_URI'));
-    $command = new MongoDB\Driver\Command(['ping' => 1]);
-    $cursor = $manager->executeCommand('sample_airbnb', $command);
-    $response = $cursor->toArray()[0];
   }
   catch(MongoDB\Driver\Exception $e) {
     header("HTTP/1.1 500 Internal Server Error");

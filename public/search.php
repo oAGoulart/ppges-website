@@ -9,7 +9,14 @@
   include "assets/templates/$lang/sticky_header.php";
 
   $html = "<p>${query}</p>";
-  var_dump($response);
+  $filter = ['text' => $query];
+  $options = [];
+
+  $query = new \MongoDB\Driver\Query($filter, $options);
+  $rows = $manager->executeQuery('sample_mflix.comments', $query); 
+  foreach ($rows as $document) {
+    pr($document);
+  }
 
   include 'assets/templates/pt/post.php';
 
