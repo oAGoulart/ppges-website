@@ -15,7 +15,7 @@
         <div class="col-sm-9">
           <p>
             <?php
-              $markupFixer = new TOC/MarkupFixer();
+              $markupFixer = new TOC\MarkupFixer();
 
               $file = file_get_contents('assets/markdown/pt/sobre.md');
               $html = Parsedown::instance()->text($file);
