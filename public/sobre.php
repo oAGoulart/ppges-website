@@ -5,6 +5,8 @@
   include "assets/templates/$lang/non_sticky_nav.php";
   include "assets/templates/$lang/sticky_header.php";
   require_once '../vendor/autoload.php';
+
+  $html = markdown2html(file_get_contents('assets/markdown/pt/sobre.md'));
 ?>
 
   <!-- Page's Contents -->
@@ -13,32 +15,14 @@
       <div class="row">
         <!-- Main Text Body -->
         <div class="col-sm-9">
-          <?php
-            $markupFixer = new TOC\MarkupFixer();
-
-            $file = file_get_contents('assets/markdown/pt/sobre.md');
-            $html = Parsedown::instance()->text($file);
-
-            // add style class to all headers
-            for ($i = 1; $i <= 6; $i++)
-              $html = str_replace("<h${i}>", "<h${i} class=\"title-anchor\">", $html);
-
-            $html = $markupFixer->fix($html);
-
-            echo $html;
-          ?>
+          <?php echo $html; ?>
         </div>
 
         <!-- Discover Links -->
         <div class="col-sm-3">
           <ul class="list-group discover-links">
             <li class="list-group-item text-uppercase">Índice</li>
-            <?php
-              $tocGenerator = new TOC\TocGenerator();
-              $list = $tocGenerator->getHtmlMenu($html, 1, 6);
-
-              echo $list;
-            ?>
+            <?php echo $tocGenerator->getHtmlMenu($html, 1, 6); ?>
           </ul>
           <ul class="list-group discover-links">
             <li class="list-group-item text-uppercase">Descubra Mais</li>

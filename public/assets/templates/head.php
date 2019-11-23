@@ -1,4 +1,21 @@
 <?php
+  $markupFixer = new TOC\MarkupFixer();
+  $tocGenerator = new TOC\TocGenerator();
+
+  function markdown2html($markdown) {
+    if ($markdown !== '') {
+      $html = Parsedown::instance()->text($markdown);
+
+      // add style class to all headers
+      for ($i = 1; $i <= 6; $i++)
+        $html = str_replace("<h${i}>", "<h${i} class=\"title-anchor\">", $html);
+
+      return $markupFixer->fix($html);
+    }
+
+    return '';
+  }
+
   // verify page language
   if (isset($_COOKIE['lang'])) {
     if (!isset( $lang))
