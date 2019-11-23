@@ -12,10 +12,10 @@
   $filter = ['text' => $query];
   $options = [];
 
-  $query = new \MongoDB\Driver\Query($filter, $options);
+  $query = new MongoDB\Driver\Query($filter, $options);
   $rows = $manager->executeQuery('sample_mflix.comments', $query); 
-  foreach ($rows as $document) {
-    pr($document);
+  foreach ($rows as $r) {
+    pr($r);
   }
 
   include 'assets/templates/pt/post.php';
