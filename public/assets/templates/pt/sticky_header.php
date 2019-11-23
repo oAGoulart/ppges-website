@@ -1,7 +1,9 @@
   <!-- Sticky Header -->
   <header class="navbar sticky-top navbar-expand-md">
     <div class="container justify-content-between text-uppercase font-weight-bold">
-      <a class="navbar-brand" href="#"><img id="logo" src="assets/images/logo.png" alt="PPGES"></a>
+      <a class="navbar-brand" href=<?php echo 'https://' , $_SERVER['SERVER_NAME']; ?>>
+        <img id="logo" alt="PPGES" src=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/assets/images/logo.png'; ?>>
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Navegar">
         <span class="navbar-toggler-icon">
           <i class="material-icons">menu</i>
@@ -13,19 +15,19 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="sobre/">Sobre</a>
+            <a class="nav-link" href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/sobre'; ?>>Sobre</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="curso/">Curso</a>
+            <a class="nav-link" href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/curso'; ?>>Curso</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pesquisas/">Pesquisas</a>
+            <a class="nav-link" href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/pesquisas'; ?>>Pesquisas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="noticias/">Notícias</a>
+            <a class="nav-link" href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/noticias'; ?>>Notícias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="agenda/">Agenda</a>
+            <a class="nav-link" href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/agenda'; ?>>Agenda</a>
           </li>
         </ul>
 

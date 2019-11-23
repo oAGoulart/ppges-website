@@ -11,16 +11,24 @@
         <div class="col-sm-3">
           <ul class="list-group">
             <li class="list-group-item p-1">
-              <a class="footer-link" href="ouvidoria/">Ouvidoria</a>
+              <a class="footer-link" href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/ouvidoria'; ?>>
+                Ouvidoria
+              </a>
             </li>
             <li class="list-group-item p-1">
-              <a class="footer-link" href="identidade/">Identidade Visual</a>
+              <a class="footer-link" href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/identidade'; ?>>
+                Identidade Visual
+              </a>
             </li>
             <li class="list-group-item p-1">
-              <a class="footer-link" href="institucional/">Institucional</a>
+              <a class="footer-link" href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/institucional'; ?>>
+                Institucional
+              </a>
             </li>
             <li class="list-group-item p-1">
-              <a class="footer-link" href="mapa">Mapa do Site</a>
+              <a class="footer-link" href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/mapa'; ?>>
+                Mapa do Site
+              </a>
             </li>
           </ul>
         </div>

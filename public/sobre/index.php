@@ -111,16 +111,24 @@
           <ul class="list-group discover-links">
             <li class="list-group-item text-uppercase">Descubra Mais</li>
             <li class="list-group-item">
-              <a href="#">Coordenação</a>
+              <a href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/coordenacao'; ?>>
+                Coordenação
+              </a>
             </li>
             <li class="list-group-item">
-              <a href="#">Professores Orientadores</a>
+              <a href="<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/professores'; ?>">
+                Professores Orientadores
+              </a>
             </li>
             <li class="list-group-item">
-              <a href="#">Alunos</a>
+              <a href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/alunos'; ?>>
+                Alunos
+              </a>
             </li>
             <li class="list-group-item">
-              <a href="#">Ciclo de Seminários e Palestras</a>
+              <a href=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/seminarios'; ?>>
+                Ciclo de Seminários e Palestras
+              </a>
             </li>
           </ul>
         </div>
