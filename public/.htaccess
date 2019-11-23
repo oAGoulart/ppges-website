@@ -1,5 +1,8 @@
 RewriteEngine on
 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/ $1 [301, L]
+
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*) $1.php [L]
 
