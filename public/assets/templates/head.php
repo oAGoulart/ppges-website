@@ -30,6 +30,10 @@
 
     setcookie('lang', $lang, time() + 60*60*24*30, '/');
   }
+
+  // connect to the database
+  $client = new MongoDB\Client(getenv('MONGODB_URI'));
+  $db = $client->test;
 ?>
 
 <!DOCTYPE html>
