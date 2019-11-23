@@ -24,6 +24,8 @@
               $html = str_replace("<h${i}>", "<h${i} class=\"title-anchor\">", $html);
 
             $html = $markupFixer->fix($html);
+
+            echo $html;
           ?>
         </div>
 
