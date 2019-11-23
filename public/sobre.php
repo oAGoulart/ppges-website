@@ -9,10 +9,12 @@
       <div class="row">
         <!-- Main Text Body -->
         <div class="col-sm-9">
-          <?php
-            $file = file_get_contents('assets/markdown/sobre.md');
-            echo Parsedown::instance()->text($file);
-          ?>
+          <p>
+            <?php
+              $file = file_get_contents('assets/markdown/sobre.md');
+              echo Parsedown::instance()->text($file);
+            ?>
+          </p>
         </div>
 
         <!-- Discover Links -->
