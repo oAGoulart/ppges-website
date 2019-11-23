@@ -34,11 +34,12 @@
                 array('url' => "https://${_SERVER['SERVER_NAME']}/seminarios", 'name'=>'Ciclo de Seminários e Palestras')
               );
 
+              $items = $links[array_rand($links), 4];
+
               for ($i = 0; $i < 4; $i++) {
                 echo '<li class="list-group-item">';
 
-                $item = $links[array_rand($links)];
-                printf('<a href="%s" title="%s">%s</a>', $item['url'], $item['name'], $item['name']);
+                printf('<a href="%s" title="%s">%s</a>', $item[$i]['url'], $item[$i]['name'], $item[$i]['name']);
 
                 echo '</li>';
               }
