@@ -1,4 +1,4 @@
-<?php include 'head.php'; ?>
+<?php include 'assets/templates/head.php'; ?>
   <!-- Non-Sticky Navbar -->
   <nav id="nav">
     <div class="container text-uppercase font-weight-bold">
