@@ -1,6 +1,7 @@
 {
   "require": {
-  	"php": "^7.3",
-    "erusev/parsedown": "^1.7.3"
+    "php": "^7.3",
+    "caseyamcl/toc": "^2.0",
+    "erusev/parsedown": "^1.7"
   }
 }
