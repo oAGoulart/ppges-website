@@ -9,7 +9,7 @@
   include "assets/templates/$lang/sticky_header.php";
 
   $html = "<p>${query}</p>";
-  var_dump($manager);
+  var_dump($response);
 
   include 'assets/templates/pt/post.php';
 
