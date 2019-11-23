@@ -32,7 +32,7 @@
         </ul>
 
         <!-- Search Bar -->
-        <form class="form-inline" method="GET"> action=<?php echo "https://${_SERVER['SERVER_NAME']}/search"; ?>>
+        <form class="form-inline" method="GET" action=<?php echo "https://${_SERVER['SERVER_NAME']}/search"; ?>>
           <div class="input-group">
             <input class="form-control form-control-sm" name="query" type="search" placeholder="Buscar..." aria-label="Buscar">
             <div class="input-group-append">
