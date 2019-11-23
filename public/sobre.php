@@ -22,7 +22,7 @@
         <div class="col-sm-3">
           <ul class="list-group discover-links">
             <li class="list-group-item text-uppercase">Índice</li>
-            <?php echo $tocGenerator->getHtmlMenu($html, 1, 6); ?>
+            <?php echo header2toc($html) ?>
           </ul>
           <ul class="list-group discover-links">
             <li class="list-group-item text-uppercase">Descubra Mais</li>
