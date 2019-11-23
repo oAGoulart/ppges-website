@@ -51,8 +51,9 @@ header {
 }
 
 a.navbar-brand img {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  display: flex;
   height: 1rem;
   width: auto;
   transition: 0.4s;
@@ -92,6 +93,11 @@ a.navbar-brand img {
   background-color: rgb(245, 245, 245);
   border: none;
   color: rgb(0, 144, 69);
+}
+
+.input-group-append {
+  height: 1rem;
+  margin: auto;
 }
 
 /* Main Element of the Page */
