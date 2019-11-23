@@ -4,7 +4,9 @@
       <div class="row align-items-center">
         <!-- Unipampa Logo -->
         <div class="col-sm-9">
-          <a href="https://unipampa.edu.br/portal/"><img id="unipampa" src="assets/images/unipampa.jpg" alt="Unipampa"></a>
+          <a href="https://unipampa.edu.br/portal/">
+            <img alt="Unipampa" id="unipampa" src=<?php echo 'https://' , $_SERVER['SERVER_NAME'] , '/assets/images/unipampa.jpg'; ?>>
+          </a>
         </div>
 
         <!-- Links -->
