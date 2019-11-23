@@ -28,10 +28,10 @@
             <li class="list-group-item text-uppercase">Descubra Mais</li>
             <?php
               $links = array(
-                array('url' => "https://$_SERVER['SERVER_NAME']/coordenacao", 'name'=>'Coordenação'),
-                array('url' => "https://$_SERVER['SERVER_NAME']/professores", 'name'=>'Professores Orientadores'),
-                array('url' => "https://$_SERVER['SERVER_NAME']/alunos", 'name'=>'Alunos'),
-                array('url' => "https://$_SERVER['SERVER_NAME']/seminarios", 'name'=>'Ciclo de Seminários e Palestras')
+                array('url' => "https://${_SERVER['SERVER_NAME']}/coordenacao", 'name'=>'Coordenação'),
+                array('url' => "https://${_SERVER['SERVER_NAME']}/professores", 'name'=>'Professores Orientadores'),
+                array('url' => "https://${_SERVER['SERVER_NAME']}/alunos", 'name'=>'Alunos'),
+                array('url' => "https://${_SERVER['SERVER_NAME']}/seminarios", 'name'=>'Ciclo de Seminários e Palestras')
               );
 
               for ($i = 0; $i < 4; $i++) {
