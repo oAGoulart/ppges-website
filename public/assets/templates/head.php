@@ -1,4 +1,13 @@
 <?php
+  // get page protocol
+  function protocol() {
+    if(isset($_SERVER['HTTPS'])){
+      return ($_SERVER['HTTPS'] && $_SERVER['HTTPS'] != 'off') ? 'https' : 'http';
+    }
+
+    return 'http';
+  }
+
   // verify page language
   if ( isset( $_COOKIE['lang'] ) ) {
     if ( !isset( $lang ) ) {
@@ -28,7 +37,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto:500,700&display=swap" rel="stylesheet">
 
   <!-- Default Styles CSS -->
-  <link rel="stylesheet" href=<?php echo $_SERVER['SERVER_NAME'] , '/assets/css/styles.css'; ?>>
+  <link rel="stylesheet" href=<?php echo protocol() , $_SERVER['SERVER_NAME'] , '/assets/css/styles.css'; ?>>
 
   <?php
     if ( isset( $page_title ) ) {
