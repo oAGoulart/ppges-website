@@ -32,8 +32,13 @@
   }
 
   // connect to the database
-  $client = new MongoDB\Driver\Manager(getenv('MONGODB_URI'));
-  $db = $client->test;
+  $manager = new MongoDB\Driver\Manager(getenv('MONGODB_URI'));
+  $stats = new MongoDB\Driver\Command(["dbstats" => 1]);
+  $res = $manager->executeCommand("testdb", $stats);
+    
+  $stats = current($res->toArray());
+
+  print_r($stats);
 ?>
 
 <!DOCTYPE html>
