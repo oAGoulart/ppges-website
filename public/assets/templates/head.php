@@ -1,4 +1,6 @@
 <?php
+  include 'packages.php';
+
   // verify page language
   if ( isset( $_COOKIE['lang'] ) ) {
     if ( !isset( $lang ) )

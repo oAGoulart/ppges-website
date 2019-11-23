@@ -1,7 +1,10 @@
-<?php include 'assets/templates/head.php'; ?>
-  <?php include "assets/templates/$lang/non_sticky_nav.php"; ?>
+<?php
+  $page_title = 'Sobre';
 
-  <?php include "assets/templates/$lang/sticky_header.php"; ?>
+  include 'assets/templates/head.php';
+  include "assets/templates/$lang/non_sticky_nav.php";
+  include "assets/templates/$lang/sticky_header.php";
+?>
 
   <!-- Page's Contents -->
   <main class="my-5">
@@ -11,9 +14,7 @@
         <div class="col-sm-9">
           <p>
             <?php
-              require_once '../vendor/autoload.php';
-
-              $file = file_get_contents('assets/markdown/sobre.md');
+              $file = file_get_contents('assets/markdown/pt/sobre.md');
               echo Parsedown::instance()->text($file);
             ?>
           </p>
@@ -79,6 +80,6 @@
     </div>
   </main>
 
-  <?php include "assets/templates/$lang/footer.php"; ?>
-
-<?php include 'assets/templates/foot.php';
+<?php
+  include "assets/templates/$lang/footer.php";
+  include 'assets/templates/foot.php';
