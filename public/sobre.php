@@ -34,7 +34,7 @@
                 array('url' => "https://${_SERVER['SERVER_NAME']}/seminarios", 'name'=>'Ciclo de Seminários e Palestras')
               );
 
-              $items = $links[array_rand($links), 4];
+              $items = array_rand($links, 4);
 
               for ($i = 0; $i < 4; $i++) {
                 echo '<li class="list-group-item">';
