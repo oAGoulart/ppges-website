@@ -31,36 +31,22 @@
 
         <!-- Discover Links -->
         <div class="col-sm-3">
-          <ul class="list-group discover-links">
-            <li class="list-group-item text-uppercase">Índice</li>
-            <li class="list-group-item">
-              <a href="#apresentacao">Apresentação</a>
-            </li>
-            <li class="list-group-item">
-              <a href="#concentracao">Área de Concentração</a>
-            </li>
-            <li class="list-group-item">
-              <a href="#pesquisa">Linhas de Pesquisa</a>
-            </li>
-            <li class="list-group-item">
-              <a href="#objetivos">Objetivos</a>
-            </li>
-            <li class="list-group-item">
-              <a href="#publico">Público Alvo Preferencial</a>
-            </li>
-            <li class="list-group-item">
-              <a href="#candidato">Perfil do Candidato</a>
-            </li>
-            <li class="list-group-item">
-              <a href="#egresso">Perfil do Egresso</a>
-            </li>
-            <li class="list-group-item">
-              <a href="#oferta">Esquema de Oferta do Curso</a>
-            </li>
-            <li class="list-group-item">
-              <a href="#responsabilidades">Responsabilidades do Aluno e do Orientador</a>
-            </li>
-          </ul>
+          <?php
+            $options = [
+              'currentAsLink' => false,
+              'currentClass'  => 'list-group-item',
+              'ancestorClass' => 'list-group-item text-uppercase',
+              'branch_class'  => 'list-group discover-links'
+            ];
+
+            $renderer = new Knp\Menu\Renderer\ListRenderer(new Knp\Menu\Matcher\Matcher(), $options);
+
+            // Render the list
+            $tocGenerator = new TOC\TocGenerator();
+            $list = $tocGenerator->getHtmlMenu($html, 1, 6, $renderer);
+
+            echo $list;
+          ?>
           <ul class="list-group discover-links">
             <li class="list-group-item text-uppercase">Descubra Mais</li>
             <li class="list-group-item">
