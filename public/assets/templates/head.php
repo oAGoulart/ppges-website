@@ -35,10 +35,10 @@
   try {
     $manager = new MongoDB\Driver\Manager(getenv('MONGODB_URI'));
     $command = new MongoDB\Driver\Command(['ping' => 1]);
-    $cursor = $manager->executeCommand('admin', $command);
+    $cursor = $manager->executeCommand('agoulart', $command);
     $response = $cursor->toArray()[0];
   }
-  catch(Exception $e) {
+  catch(MongoDB\Driver\Exception $e) {
     header("HTTP/1.1 500 Internal Server Error");
     throw $e;
   }
