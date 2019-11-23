@@ -9,11 +9,11 @@
   include "assets/templates/$lang/sticky_header.php";
 
   $html = "<p>${query}</p>";
-  $filter = ['text' => $query];
+  $filter = ['name' => $query];
   $options = [];
 
-  $query = new MongoDB\Driver\Query($filter, $options);
-  $rows = $manager->executeQuery('sample_mflix.comments', $query); 
+  $q = new MongoDB\Driver\Query($filter, $options);
+  $rows = $manager->executeQuery('sample_mflix.comments', $q); 
   foreach ($rows as $r) {
     pr($r);
   }
