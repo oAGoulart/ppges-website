@@ -40,7 +40,7 @@
                 $item = $links[array_rand($links)];
                 printf('<a href="%s" title="%s">%s</a>', $item['url'], $item['name'], $item['name']);
 
-                echo '</li>'
+                echo '</li>';
               }
             ?>
           </ul>
