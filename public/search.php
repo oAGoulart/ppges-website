@@ -33,7 +33,7 @@
       <div class="row">
         <div class="col-sm-12">
           <?php
-            echo "<h1>Buscar por ${query} em ${collection}: (${count} resultados)</h1><br>";
+            echo "<h1>Buscar ${base_url} . ${_SERVER['REQUEST_URI']} por ${query} em ${collection}: (${count} resultados)</h1><br>";
 
             foreach ($cursor as $document) {
               echo "<a href=\"${base_url}/posts/" , $document->permalink , "\"><h2>" , $document->title , "</h2></a>";
