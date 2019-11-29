@@ -57,7 +57,9 @@
             ?>
           </li>
             <?php
-              for ($i = $page_number; $i <= ($count - $page_number <= 4) ? $count : $page_number + 4; $i++) {
+              $max = (($count / $page_size) - $page_number <= 4) ? ($count / $page_size) : $page_number + 4;
+
+              for ($i = $page_number; $i <= $max; $i++) {
                 if ($i == $page_number)
                   echo "<li class=\"page-item\"><span class=\"page-link\">${i}</span></li>";
                 else {
@@ -68,7 +70,7 @@
             ?>
           <li class="page-item">
             <?php
-              if ($page_number == $count)
+              if ($page_number == ($count / $page_size))
                 echo '<span class="page-link"><span aria-hidden="true">&raquo;</span></span>';
               else {
                 $request = change_page_number($base_url, $page_number, $page_number + 1);
