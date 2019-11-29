@@ -28,7 +28,7 @@
   $filter = ['$text' => ['$search' => $query]];
   $options = [
     'allowPartialResults' => true,
-    'batchSize' => $page_size,
+    'limit' => $page_size,
     'skip' => ($page_number - 1) * $page_size
   ];
 
