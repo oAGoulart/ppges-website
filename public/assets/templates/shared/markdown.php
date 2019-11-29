@@ -21,8 +21,7 @@
     return ($html !== '') ? $tocGenerator->getHtmlMenu($html, 1, 6) : '';
   }
 
-  function change_page_number($base_url, $curr_number, $new_number) {
-    $request = "${base_url}${_SERVER['REQUEST_URI']}";
+  function change_page_number($request, $curr_number, $new_number) {
     return preg_replace('\&?p=[0-9]*', '', $request) . "\x26p=${new_number}";
   }
 
