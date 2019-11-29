@@ -22,7 +22,7 @@
   }
 
   function change_page_number($request, $curr_number, $new_number) {
-    return preg_replace('\&?p=[0-9]*', '', $request) . "\x26p=${new_number}";
+    return preg_replace("\x26?p=[0-9]*", '', $request) . "\x26p=${new_number}";
   }
 
   // site base url
