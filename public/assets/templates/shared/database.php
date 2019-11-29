@@ -25,7 +25,7 @@
 
   function query_search($query, $options, $database, $collection, $manager) {
     if ($query != '') {
-      $filter = ['$text' => ['$search' => "/${query}/"]];
+      $filter = ['$text' => ['$search' => "${query}"]];
 
       $q = new MongoDB\Driver\Query($filter, $options);
       $cursor = $manager->executeQuery("${database}.${collection}", $q);
