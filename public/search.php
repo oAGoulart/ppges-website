@@ -50,7 +50,7 @@
           echo '<nav id="pagination"><ul class="pagination justify-content-center">';
 
           if ($page_number == 1)
-            echo '<li class="page-link disabled"><span aria-hidden="true">&laquo;</span></li>';
+            echo '<li class="page-link disabled"><a href="#" aria-hidden="true">&laquo;</a></li>';
           else {
             $request = change_page_number($base_url, $page_number, $page_number - 1);
             echo "<li class=\"page-item\"><a class=\"page-link\" href=\"${request}\">1</a></li>";
