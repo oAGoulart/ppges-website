@@ -30,7 +30,7 @@
       $q = new MongoDB\Driver\Query($filter, $options);
       $cursor = $manager->executeQuery("${database}.${collection}", $q);
 
-      return $cursor
+      return $cursor;
     }
 
     return NULL;
