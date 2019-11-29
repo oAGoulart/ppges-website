@@ -26,8 +26,9 @@
   ]];
 
   $cursor = query_search($query, $options, $database, $collection, $manager);
+  $count = query_count($query, $database, $collection, $manager);
 
-  echo "<h1>Resultados de ${query} em ${collection}: (" + query_count($query, $database, $collection, $manager) + ")</h1>";
+  echo "<h1>Resultados de ${query} em ${collection}: (${count})</h1>";
 
   foreach ($cursor as $document)
     var_dump($document);
