@@ -1,7 +1,7 @@
 <?php
-  include 'shared/markdown.php'
-  include 'shared/language.php'
-  include 'shared/database.php'
+  include 'shared/markdown.php';
+  include 'shared/language.php';
+  include 'shared/database.php';
 ?>
 
 <!DOCTYPE html>
