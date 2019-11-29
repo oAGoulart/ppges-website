@@ -3,7 +3,7 @@
   $page_number = (isset($_GET['p'])) ? $_GET['p'] : 1;
   $page_size = (isset($_GET['n'])) ? $_GET['n'] : 10;
 
-  $page_title = $query;
+  $page_title = "Buscar por $query";
 
   require_once '../vendor/autoload.php';
   require 'assets/templates/head.php';
@@ -31,14 +31,19 @@
     <div class="container">
       <!-- List of Posts -->
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <?php
-            echo "<h1>Buscar por ${query} em ${collection}: (${count} resultados)</h1><br>";
+            echo "<h1>Buscar por ${query}: (${count} resultados)</h1><br>";
 
-            foreach ($cursor as $document) {
-              echo "<a href=\"${base_url}/posts/" , $document->permalink , "\"><h2>" , $document->title , "</h2></a>";
-              echo markdown2html(substr($document->body, 0, 500) . ' <mark> ... </mark>');
-              echo '<hr>';
+            if ($count != 0) {
+              foreach ($cursor as $document) {
+                echo "<a href=\"${base_url}/posts/" , $document->permalink , "\"><h2>" , $document->title , "</h2></a>";
+                echo markdown2html(substr($document->body, 0, 500) . ' <mark> ... </mark>');
+                echo '<hr>';
+              }
+            }
+            else {
+              echo "<p class=\"text-center\">Nenhum resultado foi encontrado!" . json_decode('"\u1F62D"') . "</p>";
             }
           ?>
         </div>
