@@ -57,48 +57,13 @@
             ?>
           </li>
             <?php
-              if ($page_number < 4) {
-                for ($i = 1; $i <= ($count <= 4) ? $count : 4; $i++) {
-                  if ($i == $page_number)
-                    echo "<li class=\"page-item\"><span class=\"page-link\">${i}</span></li>";
-                  else {
-                    $request = change_page_number($base_url, $page_number, $i);
-
-                    echo "<li class=\"page-item\"><a class=\"page-link\" href=\"${request}\">${i}</a></li>";
-                  }
+              for ($i = $page_number; $i <= ($count - $page_number <= 4) ? $count : $page_number + 4; $i++) {
+                if ($i == $page_number)
+                  echo "<li class=\"page-item\"><span class=\"page-link\">${i}</span></li>";
+                else {
+                  $request = change_page_number($base_url, $page_number, $i);
+                  echo "<li class=\"page-item\"><a class=\"page-link\" href=\"${request}\">${i}</a></li>";
                 }
-              }
-              else if ($page_number - $count < 3) {
-                for ($i = $page_number - 3; $i <= $count; $i++) { 
-                  if ($i == $page_number)
-                    echo "<li class=\"page-item\"><span class=\"page-link\">${i}</span></li>";
-                  else {
-                    $request = change_page_number($base_url, $page_number, $i);
-
-                    echo "<li class=\"page-item\"><a class=\"page-link\" href=\"${request}\">${i}</a></li>";
-                  }
-                }
-              }
-              else {
-                $request = change_page_number($base_url, $page_number, $page_number - 1);
-                echo "<a class=\"page-link\" href=\"${request}\"><span aria-hidden=\"true\">&laquo;</span></a>";
-
-                echo '<span class="page-link"><span aria-hidden="true">...</span></span>';
-
-                for ($i = $page_number - 2; $i <= $page_number + 1; $i++) {
-                  if ($i == $page_number)
-                    echo "<li class=\"page-item\"><span class=\"page-link\">${i}</span></li>";
-                  else {
-                    $request = change_page_number($base_url, $page_number, $i);
-
-                    echo "<li class=\"page-item\"><a class=\"page-link\" href=\"${request}\">${i}</a></li>";
-                  }
-                }
-
-                echo '<span class="page-link"><span aria-hidden="true">...</span></span>';
-
-                $request = change_page_number($base_url, $page_number, $count);
-                echo "<li class=\"page-item\"><a class=\"page-link\" href=\"${request}\">${count}</a></li>";
               }
             ?>
           <li class="page-item">
