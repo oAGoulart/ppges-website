@@ -11,22 +11,21 @@
   include "assets/templates/$lang/non_sticky_nav.php";
   include "assets/templates/$lang/sticky_header.php";
 
-  $filter = ['$text' => ['$search' => $query]];
-  $options = [
-    'allowPartialResults' => true,
-    'limit' => $page_size,
-    'skip' => ($page_number - 1) * $page_size
+  $projection = [
+    'body' => 1,
+    'permalink' => 1,
+    'author' => 1,
+    'title' => 1,
+    'tags' => 1,
+    'date' => 1
   ];
 
-  $q = new MongoDB\Driver\Query($filter, $options);
-  $cursor = $manager->executeQuery("${database}.${collection}", $q);
+  $cursor = query_search($query, $page_size, $page_number, $projection, $database, $collection);
 
-  echo "<h1>Resultados de ${query} em ${collection}: (" + $cursor->count() + ")</h1>";
+  echo "<h1>Resultados de ${query} em ${collection}: (" + count_query($query) + ")</h1>";
 
   foreach ($cursor as $document)
     var_dump($document);
-
-  $result = $manager->executeCommand($database, $command);
 
   include "assets/templates/$lang/footer.php";
   include 'assets/templates/foot.php';
