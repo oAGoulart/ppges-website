@@ -3,7 +3,7 @@
   $page_number = (isset($_GET['p'])) ? $_GET['p'] : 1;
   $page_size = (isset($_GET['n'])) ? $_GET['n'] : 10;
 
-  $page_title = "Buscar ${query}";
+  $page_title = $query;
 
   require_once '../vendor/autoload.php';
   require 'assets/templates/head.php';
@@ -28,18 +28,91 @@
   <!-- Page's Contents -->
   <main class="my-5">
     <div class="container">
+      <!-- List of Posts -->
       <div class="row">
         <div class="col-sm-12">
-          <?php echo "<h1>Resultados de ${query} em ${collection}: (${count})</h1>"; ?>
           <?php
+            echo "<h1>ppges@unipampa ~/${collection} <code>\$ ls ${query}</code> (${count})</h1>";
+
             foreach ($cursor as $document) {
               echo "<a href=\"${base_url}/posts/" , $document->permalink , "\"><h2>" , $document->title , "</h2></a>";
-              echo markdown2html(substr($document->body, 0, 500) . '<code> ... </code>');
+              echo markdown2html(substr($document->body, 0, 500) . ' <mark> ... </mark>');
               echo '<hr>';
             }
           ?>
         </div>
       </div>
+
+      <!-- Pagination -->
+      <nav>
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <?php
+              if ($page_number == 1)
+                echo '<span class="page-link"><span aria-hidden="true">&laquo;</span></span>';
+              else {
+                $request = change_page_number($base_url, $page_number, 1);
+                echo "<li class="page-item"><a class="page-link" href=\"${request}\">1</a></li>";
+              }
+            ?>
+          </li>
+            <?php
+              if ($page_number < 4) {
+                for ($i = 1; $i <= ($count <= 4) ? $count : 4; $i++) {
+                  if ($i == $page_number)
+                    echo "<li class="page-item"><span class="page-link">${i}</span></li>";
+                  else {
+                    $request = change_page_number($base_url, $page_number, $i);
+
+                    echo "<li class="page-item"><a class="page-link" href=\"${request}\">${i}</a></li>";
+                  }
+                }
+              }
+              else if ($page_number - $count < 3) {
+                for ($i = $page_number - 3; $i <= $count; $i++) { 
+                  if ($i == $page_number)
+                    echo "<li class="page-item"><span class="page-link">${i}</span></li>";
+                  else {
+                    $request = change_page_number($base_url, $page_number, $i);
+
+                    echo "<li class="page-item"><a class="page-link" href=\"${request}\">${i}</a></li>";
+                  }
+                }
+              }
+              else {
+                $request = change_page_number($base_url, $page_number, $page_number - 1);
+                echo "<a class="page-link" href=\"${request}\"><span aria-hidden="true">&laquo;</span></a>";
+
+                echo '<span class="page-link"><span aria-hidden="true">...</span></span>';
+
+                for ($i = $page_number - 2; $i <= $page_number + 1; $i++) {
+                  if ($i == $page_number)
+                    echo "<li class="page-item"><span class="page-link">${i}</span></li>";
+                  else {
+                    $request = change_page_number($base_url, $page_number, $i);
+
+                    echo "<li class="page-item"><a class="page-link" href=\"${request}\">${i}</a></li>";
+                  }
+                }
+
+                echo '<span class="page-link"><span aria-hidden="true">...</span></span>';
+
+                $request = change_page_number($base_url, $page_number, $count);
+                echo "<li class="page-item"><a class="page-link" href=\"${request}\">${count}</a></li>";
+              }
+            ?>
+          <li class="page-item">
+            <?php
+              if ($page_number == $count)
+                echo '<span class="page-link"><span aria-hidden="true">&raquo;</span></span>';
+              else {
+                $request = change_page_number($base_url, $page_number, $page_number + 1);
+                echo "<a class="page-link" href=\"${request}\"><span aria-hidden="true">&laquo;</span></a>";
+              }
+            ?>
+          </li>
+        </ul>
+      </nav>
     </div>
   </main>
 
