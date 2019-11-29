@@ -23,7 +23,7 @@
 
   function change_page_number($base_url, $curr_number, $new_number) {
     $request = $base_url . '/' . $_SERVER['REQUEST_URI'];
-    return str_replace("p=${curr_number}", '', $request) , "p=${new_number}";
+    return str_replace("p=${curr_number}", '', $request) . "p=${new_number}";
   }
 
   // site base url
