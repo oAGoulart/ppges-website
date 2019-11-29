@@ -47,7 +47,7 @@
       <!-- Pagination -->
       <?php
         if ($pages > 1) {
-          echo '<nav id="pagination"><ul class="pagination justify-content-center"><li class="page-item">';
+          echo '<nav id="pagination"><ul class="pagination justify-content-center">';
 
           if ($page_number == 1)
             echo '<li class="page-link disabled"><span aria-hidden="true">&laquo;</span></li>';
@@ -78,7 +78,7 @@
             echo "<a class=\"page-link\" href=\"${request}\"><span aria-hidden=\"true\">&raquo;</span></a>";
           }
           
-          echo '</li></ul></nav>';
+          echo '</ul></nav>';
         }
       ?>
     </div>
