@@ -23,6 +23,7 @@
 
   $cursor = query_search($query, $options, $database, $collection, $manager);
   $count = query_count($query, $database, $collection, $manager);
+  $pages = $count / $page_size;
 ?>
 
   <!-- Page's Contents -->
@@ -32,7 +33,7 @@
       <div class="row">
         <div class="col-sm-12">
           <?php
-            echo "<h1>ppges@unipampa ~/${collection} <code>\$ ls ${query}</code> (${count})</h1>";
+            echo "<h1>Buscar por ${query} em ${collection}: (${count} resultados)</h1><br>";
 
             foreach ($cursor as $document) {
               echo "<a href=\"${base_url}/posts/" , $document->permalink , "\"><h2>" , $document->title , "</h2></a>";
@@ -44,42 +45,42 @@
       </div>
 
       <!-- Pagination -->
-      <nav>
-        <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <?php
-              if ($page_number == 1)
-                echo '<span class="page-link"><span aria-hidden="true">&laquo;</span></span>';
-              else {
-                $request = change_page_number($base_url, $page_number, 1);
-                echo "<li class=\"page-item\"><a class=\"page-link\" href=\"${request}\">1</a></li>";
-              }
-            ?>
-          </li>
-            <?php
-              $max = (($count / $page_size) - $page_number <= 4) ? ($count / $page_size) : $page_number + 4;
+      <?php
+        if ($pages > 1) {
+          echo '<nav id="pagination"><ul class="pagination justify-content-center"><li class="page-item">';
 
-              for ($i = $page_number; $i <= $max; $i++) {
-                if ($i == $page_number)
-                  echo "<li class=\"page-item\"><span class=\"page-link\">${i}</span></li>";
-                else {
-                  $request = change_page_number($base_url, $page_number, $i);
-                  echo "<li class=\"page-item\"><a class=\"page-link\" href=\"${request}\">${i}</a></li>";
-                }
-              }
-            ?>
-          <li class="page-item">
-            <?php
-              if ($page_number == ($count / $page_size))
-                echo '<span class="page-link"><span aria-hidden="true">&raquo;</span></span>';
-              else {
-                $request = change_page_number($base_url, $page_number, $page_number + 1);
-                echo "<a class=\"page-link\" href=\"${request}\"><span aria-hidden=\"true\">&laquo;</span></a>";
-              }
-            ?>
-          </li>
-        </ul>
-      </nav>
+          if ($page_number == 1)
+            echo '<span class="page-link"><span aria-hidden="true">&laquo;</span></span>';
+          else {
+            $request = change_page_number($base_url, $page_number, $page_number - 1);
+            echo "<li class=\"page-item\"><a class=\"page-link\" href=\"${request}\">1</a></li>";
+          }
+
+          echo '</li>';
+
+          $max = ($pages - $page_number <= 4) ? $pages : $page_number + 4;
+
+          for ($i = $page_number; $i <= $max; $i++) {
+            if ($i == $page_number)
+              echo "<li class=\"page-item\"><span class=\"page-link\">${i}</span></li>";
+            else {
+              $request = change_page_number($base_url, $page_number, $i);
+              echo "<li class=\"page-item\"><a class=\"page-link\" href=\"${request}\">${i}</a></li>";
+            }
+          }
+
+          echo '<li class="page-item">';
+
+          if ($page_number == $pages)
+            echo '<span class="page-link"><span aria-hidden="true">&raquo;</span></span>';
+          else {
+            $request = change_page_number($base_url, $page_number, $page_number + 1);
+            echo "<a class=\"page-link\" href=\"${request}\"><span aria-hidden=\"true\">&raquo;</span></a>";
+          }
+          
+          echo '</li></ul></nav>';
+        }
+      ?>
     </div>
   </main>
 
