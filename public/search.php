@@ -30,21 +30,13 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <?php echo "<h1>Resultados de ${query} em ${collection}: (${count})</h1>"; ?>
-            </li>
-            <?php
-              foreach ($cursor as $document) {
-                echo '<li class="list-group-item">';
-
-                echo "<a href=\"${base_url}/posts/${document['permalink']}\"><h2>${document['title']}</h2></a>";
-                echo markdown2html(substr($document['body'], 0, 500));
-
-                echo '</li>';
-              }
-            ?>
-          </ul>
+          <?php echo "<h1>Resultados de ${query} em ${collection}: (${count})</h1>"; ?>
+          <?php
+            foreach ($cursor as $document) {
+              echo "<a href=\"${base_url}/posts/${document->permalink}\"><h2>${document->title}</h2></a>";
+              echo markdown2html(substr($document->body, 0, 500));
+            }
+          ?>
         </div>
       </div>
     </div>
