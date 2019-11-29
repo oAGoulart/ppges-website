@@ -107,7 +107,7 @@
                 echo '<span class="page-link"><span aria-hidden="true">&raquo;</span></span>';
               else {
                 $request = change_page_number($base_url, $page_number, $page_number + 1);
-                echo "<a class=\"page-link\" href=\"${request}\"><span aria-hidden="true">&laquo;</span></a>";
+                echo "<a class=\"page-link\" href=\"${request}\"><span aria-hidden=\"true\">&laquo;</span></a>";
               }
             ?>
           </li>
