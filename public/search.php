@@ -20,9 +20,9 @@
     'date' => 1
   ];
 
-  $cursor = query_search($query, $page_size, $page_number, $projection, $database, $collection);
+  $cursor = query_search($query, $page_size, $page_number, $projection, $database, $collection, $manager);
 
-  echo "<h1>Resultados de ${query} em ${collection}: (" + count_query($query) + ")</h1>";
+  echo "<h1>Resultados de ${query} em ${collection}: (" + query_count($query, $database, $collection, $manager) + ")</h1>";
 
   foreach ($cursor as $document)
     var_dump($document);
