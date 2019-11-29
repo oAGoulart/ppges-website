@@ -20,3 +20,6 @@
     $tocGenerator = new TOC\TocGenerator();
     return ($html !== '') ? $tocGenerator->getHtmlMenu($html, 1, 6) : '';
   }
+
+  // site base url
+  $base_url = "https://${_SERVER['SERVER_NAME']}";
