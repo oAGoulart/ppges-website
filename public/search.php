@@ -1,16 +1,14 @@
 <?php
   $query = (isset($_GET['query'])) ? $_GET['query'] : '';
-  $collection = (isset($_GET['coll'])) ? $_GET['coll'] : 'posts';
   $page_number = (isset($_GET['p'])) ? $_GET['p'] : 1;
   $page_size = (isset($_GET['n'])) ? $_GET['n'] : 10;
 
   $page_title = "Buscar ${query}";
 
   require_once '../vendor/autoload.php';
-  include 'assets/templates/head.php';
-  include "assets/templates/$lang/non_sticky_nav.php";
-  include "assets/templates/$lang/sticky_header.php";
-
+  require 'assets/templates/head.php';
+  require "assets/templates/$lang/non_sticky_nav.php";
+  require "assets/templates/$lang/sticky_header.php";
 
   $options = [
     'allowPartialResults' => true,
@@ -19,19 +17,39 @@
     'projection' => [
       'body' => 1,
       'permalink' => 1,
-      'author' => 1,
       'title' => 1,
-      'tags' => 1,
       'date' => 1
   ]];
 
   $cursor = query_search($query, $options, $database, $collection, $manager);
   $count = query_count($query, $database, $collection, $manager);
+?>
 
-  echo "<h1>Resultados de ${query} em ${collection}: (${count})</h1>";
+  <!-- Page's Contents -->
+  <main class="my-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <?php echo "<h1>Resultados de ${query} em ${collection}: (${count})</h1>"; ?>
+            </li>
+            <?php
+              foreach ($cursor as $document) {
+                echo '<li class="list-group-item">';
 
-  foreach ($cursor as $document)
-    var_dump($document);
+                echo "<a href=\"${base_url}/posts/${document['permalink']}\"><h2>${document['title']}</h2></a>";
+                echo markdown2html(substr($document['body'], 0, 500));
 
-  include "assets/templates/$lang/footer.php";
-  include 'assets/templates/foot.php';
+                echo '</li>';
+              }
+            ?>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<?php
+  require "assets/templates/$lang/footer.php";
+  require 'assets/templates/foot.php';
