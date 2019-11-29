@@ -21,7 +21,7 @@
   $q = new MongoDB\Driver\Query($filter, $options);
   $cursor = $manager->executeQuery("${database}.${collection}", $q);
 
-  echo "<h1>Resultados de ${query} em ${collection}: (${cursor.count()})</h1>";
+  echo "<h1>Resultados de ${query} em ${collection}: (" + $cursor->count() + ")</h1>";
 
   foreach ($cursor as $document)
     var_dump($document);
