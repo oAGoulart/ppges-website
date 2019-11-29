@@ -33,8 +33,9 @@
           <?php echo "<h1>Resultados de ${query} em ${collection}: (${count})</h1>"; ?>
           <?php
             foreach ($cursor as $document) {
-              echo "<a href=\"${base_url}/posts/" + $document->permalink + "\"><h2>" + $document->title + "</h2></a>";
+              echo "<a href=\"${base_url}/posts/" , $document->permalink , "\"><h2>" , $document->title , "</h2></a>";
               echo markdown2html(substr($document->body, 0, 500));
+              echo '<hr>'
             }
           ?>
         </div>
