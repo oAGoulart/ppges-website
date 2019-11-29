@@ -1,44 +1,7 @@
 <?php
-  function markdown2html($markdown) {
-    if ($markdown !== '') {
-      $markupFixer = new TOC\MarkupFixer();
-      $html = Parsedown::instance()->text($markdown);
-
-      // add style class to all headers
-      for ($i = 1; $i <= 6; $i++)
-        $html = str_replace("<h${i}>", "<h${i} class=\"title-anchor\">", $html);
-
-      return $markupFixer->fix($html);
-    }
-
-    return '';
-  }
-
-  function header2toc($html) {
-    $tocGenerator = new TOC\TocGenerator();
-    return ($html !== '') ? $tocGenerator->getHtmlMenu($html, 1, 6) : '';
-  }
-
-  // verify page language
-  if (isset($_COOKIE['lang'])) {
-    if (!isset( $lang))
-      $lang = $_COOKIE['lang'];
-  }
-  else {
-    if (!isset($lang))
-      $lang = 'pt';
-
-    setcookie('lang', $lang, time() + 60*60*24*30, '/');
-  }
-
-  // connect to the database
-  try {
-    $manager = new MongoDB\Driver\Manager(getenv('MONGODB_URI'));
-  }
-  catch(MongoDB\Driver\Exception $e) {
-    header("HTTP/1.1 500 Internal Server Error");
-    throw $e;
-  }
+  include 'shared/markdown.php'
+  include 'shared/language.php'
+  include 'shared/database.php'
 ?>
 
 <!DOCTYPE html>
