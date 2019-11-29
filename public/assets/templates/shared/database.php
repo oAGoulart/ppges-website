@@ -13,6 +13,7 @@
 
       $count = 0;
 
+      // count number of documents returned
       foreach ($cursor as $document)
         $count++;
       
@@ -24,7 +25,7 @@
 
   function query_search($query, $options, $database, $collection, $manager) {
     if ($query != '') {
-      $filter = ['$text' => ['$search' => $query]];
+      $filter = ['$text' => ['$search' => "/${query}/"]];
 
       $q = new MongoDB\Driver\Query($filter, $options);
       $cursor = $manager->executeQuery("${database}.${collection}", $q);
@@ -38,7 +39,7 @@
   // connect to the database
   try {
     $manager = new MongoDB\Driver\Manager(getenv('MONGODB_URI'));
-    
+
     $database = 'sample_training';
     $collection = 'posts';
   }
