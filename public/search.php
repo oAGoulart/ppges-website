@@ -50,7 +50,7 @@
           echo '<nav id="pagination"><ul class="pagination justify-content-center"><li class="page-item">';
 
           if ($page_number == 1)
-            echo '<span class="page-link"><span aria-hidden="true">&laquo;</span></span>';
+            echo '<li class="page-link disabled"><span aria-hidden="true">&laquo;</span></li>';
           else {
             $request = change_page_number($base_url, $page_number, $page_number - 1);
             echo "<li class=\"page-item\"><a class=\"page-link\" href=\"${request}\">1</a></li>";
@@ -62,7 +62,7 @@
 
           for ($i = $page_number; $i <= $max; $i++) {
             if ($i == $page_number)
-              echo "<li class=\"page-item\"><span class=\"page-link\">${i}</span></li>";
+              echo "<li class=\"page-item disabled\"><span class=\"page-link\">${i}</span></li>";
             else {
               $request = change_page_number($base_url, $page_number, $i);
               echo "<li class=\"page-item\"><a class=\"page-link\" href=\"${request}\">${i}</a></li>";
@@ -72,7 +72,7 @@
           echo '<li class="page-item">';
 
           if ($page_number == $pages)
-            echo '<span class="page-link"><span aria-hidden="true">&raquo;</span></span>';
+            echo '<span class="page-link disabled"><span aria-hidden="true">&raquo;</span></span>';
           else {
             $request = change_page_number($base_url, $page_number, $page_number + 1);
             echo "<a class=\"page-link\" href=\"${request}\"><span aria-hidden=\"true\">&raquo;</span></a>";
