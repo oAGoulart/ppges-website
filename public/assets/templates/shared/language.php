@@ -8,5 +8,5 @@
     if (!isset($lang))
       $lang = 'pt';
 
-    setcookie('lang', $lang, time() + 60*60*24*30, '/');
+    setcookie('lang', $lang, time() + 60 * 60 * 24 * 30, '/');
   }
