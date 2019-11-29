@@ -11,21 +11,20 @@
       $q = new MongoDB\Driver\Query($filter, $options);
       $cursor = $manager->executeQuery("${database}.${collection}", $q);
 
-      return count($cursor);
+      $count = 0;
+
+      foreach ($cursor as $document)
+        $count++;
+      
+      return $count;
     }
 
     return 0;
   }
 
-  function query_search($query, $page_size, $page_number, $projection, $database, $collection, $manager) {
+  function query_search($query, $options, $database, $collection, $manager) {
     if ($query != '') {
       $filter = ['$text' => ['$search' => $query]];
-      $options = [
-        'allowPartialResults' => true,
-        'limit' => $page_size,
-        'skip' => ($page_number - 1) * $page_size,
-        'projection' => $projection
-      ];
 
       $q = new MongoDB\Driver\Query($filter, $options);
       $cursor = $manager->executeQuery("${database}.${collection}", $q);
@@ -35,7 +34,7 @@
 
     return NULL;
   }
-  
+
   // connect to the database
   try {
     $manager = new MongoDB\Driver\Manager(getenv('MONGODB_URI'));
