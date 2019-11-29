@@ -13,10 +13,10 @@
   // index query
   $command = new MongoDB\Driver\Command([
     "createIndexes" => $coll,
-      "indexes" => [[
-        "name" => "textIndex",
-        "key"  => ["$**" => "text"],
-        "ns"   => "${database}.${coll}",
+    "indexes" => [[
+      "name" => "textIndex",
+      "key"  => ["$**" => "text"],
+      "ns"   => "${database}.${coll}",
     ]],
   ]);
 
@@ -36,9 +36,7 @@
   // drop index
   $command = new MongoDB\Driver\Command([
     "dropIndexes" => $coll,
-      "indexes" => [[
-        "name" => "textIndex"
-    ]],
+    "index" => "textIndex"
   ]);
 
   $result = $manager->executeCommand($database, $command);
