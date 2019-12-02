@@ -14,8 +14,9 @@
       $count = 0;
 
       // count number of documents returned
-      foreach ($cursor as $document)
+      foreach ($cursor as $document) {
         $count++;
+      }
       
       return $count;
     }

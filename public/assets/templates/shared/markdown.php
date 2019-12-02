@@ -6,8 +6,9 @@
       $html = Parsedown::instance()->text($markdown);
 
       // add style class to all headers
-      for ($i = 1; $i <= 6; $i++)
+      for ($i = 1; $i <= 6; $i++) {
         $html = str_replace("<h${i}>", "<h${i} class=\"title-anchor\">", $html);
+      }
 
       return $markupFixer->fix($html);
     }

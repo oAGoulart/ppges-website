@@ -21,10 +21,11 @@
   <link rel="stylesheet" href=<?php echo "https://${_SERVER['SERVER_NAME']}/assets/css/styles.css"; ?>>
 
   <?php
-    if (isset($page_title))
+    if (isset($page_title)) {
       echo "<title>$page_title | Programa de Pós-Graduação em Engenharia de Software (PPGES)</title>";
-    else
+    } else {
       echo '<title>Programa de Pós-Graduação em Engenharia de Software (PPGES)</title>';
+    }
   ?>
 </head>
 <body>
