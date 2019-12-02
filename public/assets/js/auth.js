@@ -1,7 +1,3 @@
-import * as firebase from "./firebase/app";
-
-import "./firebase/auth";
-
 var firebaseConfig = {
   apiKey: "AIzaSyB20j2RfFE2idpVrlJITh7JFkYP5KE_DAQ",
   authDomain: "ppges-website.firebaseapp.com",
