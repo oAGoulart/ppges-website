@@ -52,7 +52,7 @@ function handleLogOut() {
       window.location.protocol
       + "//"
       + window.location.hostname
-      "/admin"
+      + "/admin"
     );
   }).catch(function(error) {
     var errorCode = error.code;
