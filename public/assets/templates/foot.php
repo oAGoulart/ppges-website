@@ -7,6 +7,6 @@
   <script src=<?php echo "https://${_SERVER['SERVER_NAME']}/assets/js/navbar.js"; ?>></script>
 
   <!-- Authentication JavaScript -->
-  <script src=<?php echo "https://${_SERVER['SERVER_NAME']}/assets/js/auth.js"; ?>></script>
+  <script type="module" src=<?php echo "https://${_SERVER['SERVER_NAME']}/assets/js/auth.js"; ?>></script>
 </body>
 </html>
