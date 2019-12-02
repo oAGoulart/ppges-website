@@ -39,14 +39,14 @@ function handleLogIn() {
       var errorMessage = error.message;
 
       console.log(errorCode, errorMessage);
-      document.getElementById("emailHelp").innerHTML = errorMessage;
+      alert(errorMessage);
     });
   }
 };
 
 function handleLogOut() {
   firebase.auth().signOut().then(function() {
-    setCookie("uid", "", 30);
+    setCookie("uid", "", 0);
 
     window.location.replace(
       window.location.protocol
@@ -78,7 +78,7 @@ function initAuth() {
       setCookie("uid", uid, 30);
     } else {
       if (window.location.pathname != "/admin") {
-        setCookie("uid", "", 30);
+        setCookie("uid", "", 0);
 
         window.location.replace(
           window.location.protocol
