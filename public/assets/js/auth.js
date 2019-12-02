@@ -19,18 +19,11 @@ function setCookie(name, value, days) {
 }
 
 function handleLogIn() {
-  var form = document.getElementById("adminLogin");
-  var obj = {};
+  var email = document.getElementById("inputEmail");
+  var password = document.getElementById("inputPassword");
 
-  // Get each element on form
-  for (var i = 0; i < form.elements.length; i++) {
-    var item = form.elements.item(i);
-    obj[item.name] = item.value;
-  }
-
-  // Verify email and password are present, then call firebase authetication
-  if (obj["email"] && obj["password"]) {
-    firebase.auth().signInWithEmailAndPassword(obj["email"], obj["password"]).catch(function(error) {
+  if (email && password) {
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
 
