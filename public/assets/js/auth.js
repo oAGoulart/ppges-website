@@ -86,7 +86,7 @@ function initAuth() {
     }
   });
 
-  document.getElementById("adminLogin").addEventListener("onsubmit", handleLogIn, false);
+  document.getElementById("submitLogin").addEventListener("click", handleLogIn, false);
   //document.getElementById("adminLogout").addEventListener("onsubmit", handleLogOut, false);
 }
 
