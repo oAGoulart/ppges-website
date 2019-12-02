@@ -1,7 +1,7 @@
 <?php
   $page_title = 'Entrar no Console';
 
-  require_once '../vendor/autoload.php';
+  require_once '../../vendor/autoload.php';
   require 'assets/templates/head.php';
 ?>
 
