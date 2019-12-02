@@ -205,13 +205,22 @@ footer .list-group-item {
   text-decoration: none;
 }
 
+/* Maximum View Size Queries */
 .container {
   max-width: 90vw;
 }
 
-/* Maximum View Size Queries */
+#adminLogin {
+  width: 22vw;
+  margin: auto;
+}
+
 @media only screen and (min-width: 1333px) {
   .container {
     max-width: 1200px;
+  }
+
+  #adminLogin {
+    width: 264px;
   }
 }
