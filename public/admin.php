@@ -29,7 +29,7 @@
                       </div>
                     </div>
                   </div>
-                  <button type="button" id="submitLogin" class="btn btn-primary">Entrar</button>
+                  <button id="submitLogin" class="btn btn-primary" type="submit">Entrar</button>
                 </form>';
         }
       ?>
