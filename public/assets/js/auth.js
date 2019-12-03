@@ -53,7 +53,7 @@ function initAuth() {
       var providerData = user.providerData;
 
       firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
-        jQuery.post(
+        $.post(
           window.location.protocol + "//" + window.location.host + "/admin",
           { "token": idToken, "apiKey": firebaseConfig.apiKey }
         );
