@@ -5,7 +5,7 @@
 
   <?php
     if (preg_match('^/admin', $_SERVER['REQUEST_URI']) === TRUE) {
-      echo '<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>'
+      echo '<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>';
       echo '<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>';
 
       echo "<script src=\"https://${_SERVER['SERVER_NAME']}/assets/js/auth.js\"></script>";
