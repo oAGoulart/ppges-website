@@ -30,7 +30,7 @@
   <main class="my-5">
     <div class="container">
       <?php
-        if (isset($user))) {
+        if (isset($user)) {
           echo 'Hello' . $user;
         } else {
           echo '<form id="adminLogin" class="p-3 border align-middle">
