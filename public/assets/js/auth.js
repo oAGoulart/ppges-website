@@ -56,7 +56,9 @@ function initAuth() {
         $.post(
           window.location.protocol + "//" + window.location.host + "/admin",
           { "token": idToken, "apiKey": firebaseConfig.apiKey }
-        );
+        ).done(function() {
+          window.location.reload(true);
+        });
       }).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
