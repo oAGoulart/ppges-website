@@ -1,7 +1,7 @@
 <?php
-  // verify page language
+  // Verify page language
   if (isset($_COOKIE['lang'])) {
-    if (!isset( $lang)) {
+    if (!isset($lang)) {
       $lang = $_COOKIE['lang'];
     }
   }

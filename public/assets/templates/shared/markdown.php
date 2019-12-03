@@ -5,7 +5,7 @@
       $markupFixer = new TOC\MarkupFixer();
       $html = Parsedown::instance()->text($markdown);
 
-      // add style class to all headers
+      // Add style class to all headers
       for ($i = 1; $i <= 6; $i++) {
         $html = str_replace("<h${i}>", "<h${i} class=\"title-anchor\">", $html);
       }
@@ -27,5 +27,5 @@
     return preg_replace("/\x26?p=[0-9]*/i", '', $request) . "\x26p=${new_number}";
   }
 
-  // site base url
+  // Site base url
   $base_url = "https://${_SERVER['SERVER_NAME']}";

@@ -20,7 +20,10 @@ var handleLogIn = function() {
       var errorMessage = error.message;
 
       console.log(errorCode, errorMessage);
-      document.getElementById("emailHelp").innerHTML = errorMessage;
+      var msg = document.getElementById("emailHelp");
+      msg.classList.remove("text-muted");
+      msg.classList.add("text-danger");
+      msg.innerHTML = errorMessage;
     });
   }
 };

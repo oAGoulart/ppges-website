@@ -17,10 +17,10 @@
             <li class="list-group-item text-uppercase">Descubra Mais</li>
             <?php
               $discover_links = array(
-                array('url' => "https://${_SERVER['SERVER_NAME']}/coordenacao", 'name'=>'Coordenação'),
-                array('url' => "https://${_SERVER['SERVER_NAME']}/professores", 'name'=>'Professores Orientadores'),
-                array('url' => "https://${_SERVER['SERVER_NAME']}/alunos", 'name'=>'Alunos'),
-                array('url' => "https://${_SERVER['SERVER_NAME']}/seminarios", 'name'=>'Ciclo de Seminários e Palestras')
+                array('url' => "${base_url}/coordenacao", 'name'=>'Coordenação'),
+                array('url' => "${base_url}/professores", 'name'=>'Professores Orientadores'),
+                array('url' => "${base_url}/alunos", 'name'=>'Alunos'),
+                array('url' => "${base_url}/seminarios", 'name'=>'Ciclo de Seminários e Palestras')
               );
 
               $items = array_rand($discover_links, 4);

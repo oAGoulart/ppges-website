@@ -13,7 +13,7 @@
 
       $count = 0;
 
-      // count number of documents returned
+      // Count number of documents returned
       foreach ($cursor as $document) {
         $count++;
       }
@@ -37,7 +37,7 @@
     return NULL;
   }
 
-  // connect to the database
+  // Connect to the database
   try {
     $manager = new MongoDB\Driver\Manager(getenv('MONGODB_URI'));
 
