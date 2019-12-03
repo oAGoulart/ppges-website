@@ -10,39 +10,24 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-function setCookie(name, value, days) {
-  var d = new Date();
-  d.setTime(d.getTime() + (days*24*60*60*1000));
-
-  var expires = "expires="+ d.toUTCString();
-  document.cookie = name + "=" + value + "; " + expires + "; path=/";
-}
-
 var handleLogIn = function() {
   var email = document.getElementById("inputEmail");
   var password = document.getElementById("inputPassword");
 
   if (email && password) {
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    firebase.auth().signInWithEmailAndPassword(email.value, password.value).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
 
       console.log(errorCode, errorMessage);
-      alert(errorMessage);
+      document.getElementById("emailHelp").innerHTML = errorMessage;
     });
   }
 };
 
 var handleLogOut = function() {
   firebase.auth().signOut().then(function() {
-    setCookie("uid", "", 0);
-
-    window.location.replace(
-      window.location.protocol
-      + "//"
-      + window.location.hostname
-      + "/admin"
-    );
+    alert("You logged out!");
   }).catch(function(error) {
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -64,23 +49,27 @@ function initAuth() {
       var uid = user.uid;
       var providerData = user.providerData;
 
-      setCookie("uid", uid, 30);
+      firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
+        jQuery.post(
+          window.location.protocol + "//" + window.location.host + "/admin",
+          { "token": idToken, "apiKey": firebaseConfig.apiKey }
+        );
+      }).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+
+        console.log(errorCode, errorMessage);
+        alert(errorMessage);
+      });
     } else {
       if (window.location.pathname != "/admin") {
-        setCookie("uid", "", 0);
-
-        window.location.replace(
-          window.location.protocol
-          + "//"
-          + window.location.hostname
-          + "/admin"
-        );
+        alert("You're not logged!");
       }
     }
   });
 
-  document.getElementById("submitLogin").addEventListener("onclick", handleLogIn, false);
-  //document.getElementById("adminLogout").addEventListener("onsubmit", handleLogOut, false);
+  document.getElementById("submitLogin").addEventListener("click", handleLogIn, false);
+  //document.getElementById("adminLogout").addEventListener("click", handleLogOut, false);
 }
 
 window.onload = function() {
