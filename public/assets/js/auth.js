@@ -54,10 +54,12 @@ function initAuth() {
 
       firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
         $.post(
-          window.location.protocol + "//" + window.location.host + "/admin",
-          { "token": idToken, "apiKey": firebaseConfig.apiKey }
-        ).done(function() {
-          window.location.reload(true);
+          window.location.protocol + "//" + window.location.host + "/console",
+          { "token": idToken, "apiKey": firebaseConfig.apiKey },
+          function(data) {
+            $('#console').html(data);
+        }).done(function() {
+          alert("Welcome!");
         });
       }).catch(function(error) {
         var errorCode = error.code;
@@ -73,8 +75,14 @@ function initAuth() {
     }
   });
 
-  document.getElementById("submitLogin").addEventListener("click", handleLogIn, false);
-  //document.getElementById("adminLogout").addEventListener("click", handleLogOut, false);
+  var login = document.getElementById("submitLogin");
+  var logout = document.getElementById("adminLogout");
+
+  if (login) {
+    login.addEventListener("click", handleLogIn, false);
+  } else if (logout) {
+    logout.addEventListener("click", handleLogOut, false);
+  }
 }
 
 window.onload = function() {
