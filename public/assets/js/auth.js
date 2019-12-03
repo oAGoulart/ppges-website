@@ -18,7 +18,7 @@ function setCookie(name, value, days) {
   document.cookie = name + "=" + value + "; " + expires + "; path=/";
 }
 
-function handleLogIn() {
+var handleLogIn = function() {
   var email = document.getElementById("inputEmail");
   var password = document.getElementById("inputPassword");
 
@@ -33,7 +33,7 @@ function handleLogIn() {
   }
 };
 
-function handleLogOut() {
+var handleLogOut = function() {
   firebase.auth().signOut().then(function() {
     setCookie("uid", "", 0);
 

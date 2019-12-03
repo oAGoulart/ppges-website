@@ -4,15 +4,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <!-- Firebase App (the core Firebase SDK) -->
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
 
   <!-- Firebase Auth -->
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
 
-  <!-- Navbar JavaScript -->
-  <script src=<?php echo "https://${_SERVER['SERVER_NAME']}/assets/js/navbar.js"; ?>></script>
-
-  <!-- Authentication JavaScript -->
-  <script type="module" src=<?php echo "https://${_SERVER['SERVER_NAME']}/assets/js/auth.js"; ?>></script>
+  <?php
+    if preg_match('^/admin', $_SERVER['REQUEST_URI']) === TRUE {
+      echo "<script src=\"https://${_SERVER['SERVER_NAME']}/assets/js/auth.js\"></script>";
+    } else {
+      echo "<script src=\"https://${_SERVER['SERVER_NAME']}/assets/js/navbar.js\"></script>";
+    }
+  ?>
 </body>
 </html>
