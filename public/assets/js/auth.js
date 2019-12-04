@@ -35,7 +35,7 @@ var handleLogOut = function() {
     console.log(error.code, error.message);
     alert(error.message);
   });
-}
+};
 
 // Look for changes in user status
 function initAuth() {
