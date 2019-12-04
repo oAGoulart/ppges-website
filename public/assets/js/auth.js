@@ -52,15 +52,23 @@ function initAuth() {
       var uid = user.uid;
       var providerData = user.providerData;
 
-      firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
-        $.post(
-          window.location.protocol + "//" + window.location.host + "/console",
-          { "token": idToken, "apiKey": firebaseConfig.apiKey },
-          function(data) {
-            $('#console').html(data);
-        }).done(function() {
-          alert("Welcome!");
-        });
+      firebase.auth().currentUser.getIdToken(true).then(function(token) {
+        var req = new XMLHttpRequest();
+
+        req.onload = function() {
+          $('#console').html(req.responseText);
+        };
+        req.onerror = function() {
+          $('#console').html('There was an error');
+        };
+
+        req.open(
+          'GET', 
+          'https://us-central1-' + firebaseConfig.appId + '.cloudfunctions.net/console', 
+          true
+          );
+        req.setRequestHeader('Authorization', 'Bearer ' + token);
+        req.send();
       }).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
