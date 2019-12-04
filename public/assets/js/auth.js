@@ -13,14 +13,14 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var handleLogIn = function() {
-  var email = $('#inputEmail');
-  var password = $('#inputPassword');
+  var email = $('#inputEmail')[0];
+  var password = $('#inputPassword')[0];
 
   if (email && password) {
     firebase.auth().signInWithEmailAndPassword(email.value, password.value).catch(function(error) {
       console.log(error.code, error.message);
 
-      var msg = $('#emailHelp');
+      var msg = $('#emailHelp')[0];
       msg.classList.remove('text-muted');
       msg.classList.add('text-danger');
       msg.innerHTML = error.message;
@@ -46,8 +46,8 @@ function initAuth() {
 
         req.onload = function() {
           if (req.status == 200) {
-            $('#logoutCard').classList.remove('d-none');
-            $('#loginCard').classList.add('d-none');
+            $('#logoutCard')[0].classList.remove('d-none');
+            $('#loginCard')[0].classList.add('d-none');
           }
 
           $('#console').html(req.responseText);
@@ -71,8 +71,8 @@ function initAuth() {
     }
   });
 
-  $('#submitLogin').addEventListener('click', handleLogIn, false);
-  $('#adminLogout').addEventListener('click', handleLogIn, false);
+  $('#submitLogin')[0].addEventListener('click', handleLogIn, false);
+  $('#adminLogout')[0].addEventListener('click', handleLogIn, false);
 }
 
 window.onload = function() {
