@@ -52,7 +52,7 @@ function initAuth() {
       var uid = user.uid;
       var providerData = user.providerData;
 
-      firebase.auth().currentUser.getIdToken(true).then(function(token) {
+      firebase.auth().currentUser.getIdToken().then(function(token) {
         var req = new XMLHttpRequest();
 
         req.onload = function() {
