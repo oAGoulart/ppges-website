@@ -71,7 +71,7 @@ function initAuth() {
     }
   });
 
-  $('#submitLogin');.addEventListener('click', handleLogIn, false);
+  $('#submitLogin').addEventListener('click', handleLogIn, false);
   $('#adminLogout').addEventListener('click', handleLogIn, false);
 }
 
