@@ -46,8 +46,8 @@ function initAuth() {
 
         req.onload = function() {
           if (req.status == 200) {
-            $('#logoutCard')classList.remove('d-none');
-            $('#loginCard')classList.add('d-none');
+            $('#logoutCard').classList.remove('d-none');
+            $('#loginCard').classList.add('d-none');
           }
 
           $('#console').html(req.responseText);
