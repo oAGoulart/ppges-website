@@ -64,7 +64,7 @@ function initAuth() {
 
         req.open(
           'GET', 
-          'https://us-central1-' + firebaseConfig.appId + '.cloudfunctions.net/console', 
+          'https://us-central1-' + firebaseConfig.projectId + '.cloudfunctions.net/app/console', 
           true
           );
         req.setRequestHeader('Authorization', 'Bearer ' + token);
