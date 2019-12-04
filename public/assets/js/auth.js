@@ -13,14 +13,14 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var handleLogIn = function() {
-  var email = document.getElementById('inputEmail');
-  var password = document.getElementById('inputPassword');
+  var email = $('#inputEmail');
+  var password = $('#inputPassword');
 
   if (email && password) {
     firebase.auth().signInWithEmailAndPassword(email.value, password.value).catch(function(error) {
       console.log(error.code, error.message);
 
-      var msg = document.getElementById('emailHelp');
+      var msg = $('#emailHelp');
       msg.classList.remove('text-muted');
       msg.classList.add('text-danger');
       msg.innerHTML = error.message;
@@ -45,6 +45,11 @@ function initAuth() {
         var req = new XMLHttpRequest();
 
         req.onload = function() {
+          if (req.status == 200) {
+            $('#logoutCard')classList.remove('d-none');
+            $('#loginCard')classList.add('d-none');
+          }
+
           $('#console').html(req.responseText);
         };
         req.onerror = function() {
@@ -66,14 +71,8 @@ function initAuth() {
     }
   });
 
-  var login = document.getElementById('submitLogin');
-  var logout = document.getElementById('adminLogout');
-
-  if (login) {
-    login.addEventListener('click', handleLogIn, false);
-  } else if (logout) {
-    logout.addEventListener('click', handleLogOut, false);
-  }
+  $('#submitLogin');.addEventListener('click', handleLogIn, false);
+  $('#adminLogout').addEventListener('click', handleLogIn, false);
 }
 
 window.onload = function() {
