@@ -1,0 +1,14 @@
+[debug] [2019-12-04T00:35:52.822Z] ----------------------------------------------------------------------
+[debug] [2019-12-04T00:35:52.856Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\augusto\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2019-12-04T00:35:52.858Z] CLI Version:   7.8.1
+[debug] [2019-12-04T00:35:52.858Z] Platform:      win32
+[debug] [2019-12-04T00:35:52.858Z] Node Version:  v10.16.3
+[debug] [2019-12-04T00:35:53.771Z] Time:          Tue Dec 03 2019 22:35:52 GMT-0200 (GMT-02:00)
+[debug] [2019-12-04T00:35:53.771Z] ----------------------------------------------------------------------
+[debug] [2019-12-04T00:35:53.771Z] 
+[debug] [2019-12-04T00:35:54.105Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-04T00:35:54.111Z] > authorizing via signed-in user
+[debug] [2019-12-04T00:35:54.113Z] [iam] checking project ppges-website for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2019-12-04T00:35:54.125Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/ppges-website:testIamPermissions  
+
+[debug] [2019-12-04T00:35:57.056Z] <<< HTTP RESPONSE 200
