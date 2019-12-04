@@ -43,9 +43,7 @@ app.use(validateToken);
 app.get('/console', (req, res) => {
   if (req.user.uid) {
     res.send(`
-      <div class="container align-items-center">
-        <button id="adminLogout" class="btn btn-primary" type="button">Sair</button>
-      </div>
+      Hello!
     `);
   }
 });

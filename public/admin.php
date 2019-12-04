@@ -5,8 +5,11 @@
 ?>
 
   <!-- Page's Contents -->
-  <main id="console" class="my-5">
-    <div class="container">
+  <main class="my-5">
+    <div id="logoutCard" class="container d-none">
+      <button id="adminLogout" class="btn btn-primary" type="button">Sair</button>
+    </div>
+    <div id="loginCard" class="container">
       <form id="adminLogin" class="p-3 border align-middle">
         <div class="form-row align-items-center">
           <div class="col-12">
@@ -27,6 +30,8 @@
         </div>
         <button id="submitLogin" class="btn btn-primary" type="button">Entrar</button>
       </form>
+    </div>
+    <div id="console" class="container">
     </div>
   </main>
 
