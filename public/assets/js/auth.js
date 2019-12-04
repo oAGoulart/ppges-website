@@ -72,7 +72,7 @@ function initAuth() {
   });
 
   $('#submitLogin')[0].addEventListener('click', handleLogIn, false);
-  $('#adminLogout')[0].addEventListener('click', handleLogIn, false);
+  $('#adminLogout')[0].addEventListener('click', handleLogOut, false);
 }
 
 window.onload = function() {
