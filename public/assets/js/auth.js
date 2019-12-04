@@ -63,8 +63,6 @@ function initAuth() {
         console.log(error.code, error.message);
         alert(error.message);
       });
-    } else {
-      window.location.reload(true);
     }
   });
 
