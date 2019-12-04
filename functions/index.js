@@ -7,10 +7,11 @@ const cors = require('cors')({origin: true});
 const express = require('express');
 const app = express();
 
-const validateFirebaseIdToken = async (req, res, next) => {
+const validateToken = async (req, res, next) => {
   if (!req.header('authorization') || !req.header('authorization').startsWith('Bearer ')) {
-    console.error('No Firebase ID token was passed as a Bearer token in the Authorization header.');
+    console.error('Token is invalid.');
     res.status(403).send('Unauthorized');
+
     return;
   }
 
@@ -19,6 +20,7 @@ const validateFirebaseIdToken = async (req, res, next) => {
     idToken = req.header('authorization').split('Bearer ')[1];
   } else {
     res.status(403).send('Unauthorized');
+
     return;
   }
 
@@ -26,20 +28,30 @@ const validateFirebaseIdToken = async (req, res, next) => {
     const decodedIdToken = await admin.auth().verifyIdToken(idToken);
     req.user = decodedIdToken;
     next();
+
     return;
   } catch (error) {
-    console.error('Error while verifying Firebase ID token:', error);
+    console.error('Error while verifying token:', error);
     res.status(403).send('Unauthorized');
+
     return;
   }
-
-  next();
 };
 
 app.use(cors);
-app.use(validateFirebaseIdToken);
+app.use(validateToken);
 app.get('/console', (req, res) => {
-  res.send(req.user);
+  if (req.user.uid) {
+    res.send(`
+      <div class="container">
+        <div class="form-row align-items-center">
+          <div class="col-12">
+            <button id="adminLogout" class="btn btn-primary" type="button">Sair</button>
+          </div>
+        </div>
+      </div>
+    `);
+  }
 });
 
 exports.app = functions.https.onRequest(app);
