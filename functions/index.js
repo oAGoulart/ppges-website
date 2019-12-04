@@ -43,12 +43,8 @@ app.use(validateToken);
 app.get('/console', (req, res) => {
   if (req.user.uid) {
     res.send(`
-      <div class="container">
-        <div class="form-row align-items-center">
-          <div class="col-12">
-            <button id="adminLogout" class="btn btn-primary" type="button">Sair</button>
-          </div>
-        </div>
+      <div class="container align-items-center">
+        <button id="adminLogout" class="btn btn-primary" type="button">Sair</button>
       </div>
     `);
   }
