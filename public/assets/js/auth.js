@@ -1,3 +1,5 @@
+'use strict';
+
 var firebaseConfig = {
   apiKey: 'AIzaSyB20j2RfFE2idpVrlJITh7JFkYP5KE_DAQ',
   authDomain: 'ppges-website.firebaseapp.com',
@@ -16,14 +18,12 @@ var handleLogIn = function() {
 
   if (email && password) {
     firebase.auth().signInWithEmailAndPassword(email.value, password.value).catch(function(error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      console.log(error.code, error.message);
 
-      console.log(errorCode, errorMessage);
       var msg = document.getElementById('emailHelp');
       msg.classList.remove('text-muted');
       msg.classList.add('text-danger');
-      msg.innerHTML = errorMessage;
+      msg.innerHTML = error.message;
     });
   }
 };
@@ -32,11 +32,8 @@ var handleLogOut = function() {
   firebase.auth().signOut().then(function() {
     alert('You logged out!');
   }).catch(function(error) {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-
-    console.log(errorCode, errorMessage);
-    alert(errorMessage);
+    console.log(error.code, error.message);
+    alert(error.message);
   });
 }
 
@@ -44,14 +41,6 @@ var handleLogOut = function() {
 function initAuth() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      var displayName = user.displayName;
-      var email = user.email;
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
-      var providerData = user.providerData;
-
       firebase.auth().currentUser.getIdToken().then(function(token) {
         var req = new XMLHttpRequest();
 
@@ -59,27 +48,23 @@ function initAuth() {
           $('#console').html(req.responseText);
         };
         req.onerror = function() {
-          $('#console').html('There was an error');
+          alert(req.responseText);
         };
 
         req.open(
           'GET', 
           'https://us-central1-' + firebaseConfig.projectId + '.cloudfunctions.net/app/console', 
           true
-          );
+        );
+
         req.setRequestHeader('authorization', 'Bearer ' + token);
         req.send();
       }).catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-
-        console.log(errorCode, errorMessage);
-        alert(errorMessage);
+        console.log(error.code, error.message);
+        alert(error.message);
       });
     } else {
-      if (window.location.pathname != '/admin') {
-        alert('You\'re not logged!');
-      }
+      window.location.reload(true);
     }
   });
 
