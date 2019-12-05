@@ -5,8 +5,8 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Lang</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Português</a>
-            <a class="dropdown-item" href=<?php echo "${base_url}/en-US"; ?>>
+            <a id="langPt" class="dropdown-item" href="#">Português</a>
+            <a id="langEn" class="dropdown-item" href=<?php echo "${base_url}/en"; ?>>
               English
             </a>
           </div>

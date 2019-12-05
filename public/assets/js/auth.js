@@ -30,8 +30,6 @@ var handleLogIn = function() {
 
 var handleLogOut = function() {
   firebase.auth().signOut().then(function() {
-    alert('You logged out!');
-
     $('#logoutCard')[0].classList.add('d-none');
     $('#loginCard')[0].classList.remove('d-none');
     $('#console').html('');

@@ -24,7 +24,7 @@
             <a class="nav-link" href=<?php echo "${base_url}/pesquisas"; ?>>Pesquisas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=<?php echo "${base_url}/noticias"; ?>>Notícias</a>
+            <a class="nav-link" href=<?php echo "${base_url}/informes"; ?>>Informes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href=<?php echo "${base_url}/agenda"; ?>>Agenda</a>

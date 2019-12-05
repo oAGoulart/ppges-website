@@ -1,19 +1,37 @@
 <?php
+  function filter_search($filter, $options, $database, $collection, $manager) {
+    if (!is_null($filter)) {
+      $q = new MongoDB\Driver\Query($filter, $options);
+      $cursor = $manager->executeQuery("${database}.${collection}", $q);
+
+      return $cursor;
+    }
+
+    return NULL;
+  }
+
+  function query_search($query, $options, $database, $collection, $manager) {
+    if ($query != '') {
+      $filter = ['$text' => ['$search' => "${query}"]];
+
+      return filter_search($filter, $options, $database, $collection, $manager);
+    }
+
+    return NULL;
+  }
+
   function query_count($query, $database, $collection, $manager)
   {
     if ($query != '') {
-      $filter = ['$text' => ['$search' => $query]];
       $options = [
         'allowPartialResults' => true,
         'projection' => ['_id' => 1]
       ];
 
-      $q = new MongoDB\Driver\Query($filter, $options);
-      $cursor = $manager->executeQuery("${database}.${collection}", $q);
-
-      $count = 0;
+      $cursor = query_search($query, $options, $database, $collection, $manager);
 
       // Count number of documents returned
+      $count = 0;
       foreach ($cursor as $document) {
         $count++;
       }
@@ -24,24 +42,11 @@
     return 0;
   }
 
-  function query_search($query, $options, $database, $collection, $manager) {
-    if ($query != '') {
-      $filter = ['$text' => ['$search' => "${query}"]];
-
-      $q = new MongoDB\Driver\Query($filter, $options);
-      $cursor = $manager->executeQuery("${database}.${collection}", $q);
-
-      return $cursor;
-    }
-
-    return NULL;
-  }
-
   // Connect to the database
   try {
     $manager = new MongoDB\Driver\Manager(getenv('MONGODB_URI'));
 
-    $database = 'sample_training';
+    $database = 'public';
     $collection = 'posts';
   }
   catch(MongoDB\Driver\Exception $e) {
