@@ -9,7 +9,7 @@
     for ($i = 0; $i < 4; $i++) {
       echo '<li class="list-group-item">';
 
-      printf("<a href=\"${base_url}%s\" title=\"%s\">%s</a>", $discover_links[$items[$i]]['permalink'], $discover_links[$items[$i]]['name'], $discover_links[$items[$i]]['name']);
+      printf("<a href=\"${base_url}%s\" title=\"%s\">%s</a>", $discover_links[$items[$i]]->permalink, $discover_links[$items[$i]]->name, $discover_links[$items[$i]]->name);
 
       echo '</li>';
     }
