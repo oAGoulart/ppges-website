@@ -37,7 +37,7 @@
                 echo '<hr>';
               }
             } else {
-              echo "<p class=\"text-center\">Nenhum resultado foi encontrado!" . json_decode('"\u1F62D"') . "</p>";
+              echo "<p class=\"text-center\">Nenhum resultado foi encontrado! \u{1F62D}</p>";
             }
           ?>
         </div>
