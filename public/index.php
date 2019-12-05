@@ -1,7 +1,7 @@
 <?php
   require 'assets/templates/head.php';
-  require "assets/templates/$lang/non_sticky_nav.php";
-  require "assets/templates/$lang/sticky_header.php";
+  require "assets/templates/${lang}/non_sticky_nav.php";
+  require "assets/templates/${lang}/sticky_header.php";
 ?>
 
   <!-- Page's Contents -->
@@ -54,7 +54,7 @@
       <div class="row align-items-center my-5">
         <div class="col-sm-3">
           <div class="card">
-            <a class="card-link" href=<?php echo "${base_url}/editais"; ?>>
+            <a class="card-link" href=<?php echo "${base_url}/informes/editais"; ?>>
               <img class="card-img-top" src="assets/images/banner.png" alt="Banner 16:9">
               <div class="card-body">
                 <h6 class="card-text">Confira os Editais</h6>
@@ -74,7 +74,7 @@
         </div>
         <div class="col-sm-3">
           <div class="card">
-            <a class="card-link" href=<?php echo "${base_url}/agenda"; ?>>
+            <a class="card-link" href=<?php echo "${base_url}/agenda/eventos"; ?>>
               <img class="card-img-top" src="assets/images/banner.png" alt="Banner 16:9">
               <div class="card-body">
                 <h6 class="card-text">Confira os Eventos</h6>
@@ -97,5 +97,5 @@
   </main>
 
 <?php
-  require "assets/templates/$lang/footer.php";
+  require "assets/templates/${lang}/footer.php";
   require 'assets/templates/foot.php';

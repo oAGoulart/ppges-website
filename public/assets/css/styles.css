@@ -79,21 +79,21 @@ a.navbar-brand img {
   color: rgb(40, 90, 60);
 }
 
-.form-control {
+.navbar-collapse .form-control {
   border-radius: 0rem;
   border-color: rgb(0, 144, 69);
   color: rgb(0, 144, 69);
   background-color: rgb(245, 245, 245);
 }
 
-.form-control:focus {
+.navbar-collapse .form-control:focus {
   border-color: rgb(0, 144, 69);
   box-shadow: 0 0 0 0.2rem rgba(0, 144, 69, 0.5);
   color: rgb(0, 144, 69);
   background-color: rgb(245, 245, 245);
 }
 
-.form-inline .input-group-text,
+.navbar-collapse .form-inline .input-group-text,
 .search-btn {
   background-color: rgb(245, 245, 245);
   border: none;
@@ -110,6 +110,11 @@ main {
   margin: auto;
   min-height: 100vh;
   background-color: white;
+}
+
+.discover-links,
+.discover-links > li {
+  background-color: rgb(240, 240, 240);
 }
 
 .discover-links {
