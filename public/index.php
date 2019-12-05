@@ -51,25 +51,23 @@
       </h1>
 
       <!-- Featured Cards -->
-      <div class="row align-items-center my-5">
-        <div class="card-deck">
-          <?php
-            $cursor = filter_search([], [], $database, 'discover_links', $manager);
-            $discover_links = $cursor->toArray();
+      <div class="card-deck my-5">
+        <?php
+          $cursor = filter_search([], [], $database, 'discover_links', $manager);
+          $discover_links = $cursor->toArray();
 
-            $items = array_rand($discover_links, 4);
+          $items = array_rand($discover_links, 4);
 
-            for ($i = 0; $i < 4; $i++) {
-              echo '<div class="card">';
+          for ($i = 0; $i < 4; $i++) {
+            echo '<div class="card">';
 
-              printf("<a href=\"${base_url}/%s\">", $discover_links[$items[$i]]->permalink);
-              echo "<img class=\"card-img-top\" src=\"${base_url}/assets/images/banner.png\" alt=\"Banner 16:9\">";
-              printf("<div class=\"card-body\"><h6 class=\"card-text\">%s</h6></div>", $discover_links[$items[$i]]->description);
+            printf("<a href=\"${base_url}/%s\">", $discover_links[$items[$i]]->permalink);
+            echo "<img class=\"card-img-top\" src=\"${base_url}/assets/images/banner.png\" alt=\"Banner 16:9\">";
+            printf("<div class=\"card-body\"><h6 class=\"card-text\">%s</h6></div>", $discover_links[$items[$i]]->description);
 
-              echo '</a></div>';
-            }
-          ?>
-        </div>
+            echo '</a></div>';
+          }
+        ?>
       </div>
     </div>
   </main>
