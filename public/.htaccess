@@ -16,8 +16,11 @@ RewriteRule ^([^/]+)/$ ./$1 [R=301,L]
 RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
 RewriteRule ^(.+)\.php$ ./$1 [R=301,L]
 
-# Redict pretty urls to proper .php files
+# Redirect pretty urls to proper .php files
 RewriteRule ^([^/.]+)$ $1.php [L]
+RewriteRule ^agenda/(.*)$ agenda\.php?name=$2&%{QUERY_STRING} [L]
+RewriteRule ^informes/(.*)$ posts\.php?category=informes&name=$2&%{QUERY_STRING} [L]
+RewriteRule ^pesquisas/(.*)$ posts\.php?category=pesquisas&name=$2&%{QUERY_STRING} [L]
 
 # Error handling
 ErrorDocument 400 /error.php
@@ -30,3 +33,6 @@ ErrorDocument 501 /error.php
 ErrorDocument 502 /error.php
 ErrorDocument 503 /error.php
 ErrorDocument 504 /error.php
+
+# Disable directory browsing
+Options All -Indexes

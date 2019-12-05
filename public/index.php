@@ -52,45 +52,23 @@
 
       <!-- Featured Cards -->
       <div class="row align-items-center my-5">
-        <div class="col-sm-3">
-          <div class="card">
-            <a class="card-link" href=<?php echo "${base_url}/informes/editais"; ?>>
-              <img class="card-img-top" src="assets/images/banner.png" alt="Banner 16:9">
-              <div class="card-body">
-                <h6 class="card-text">Confira os Editais</h6>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="card">
-            <a class="card-link" href=<?php echo "${base_url}/professores"; ?>>
-              <img class="card-img-top" src="assets/images/banner.png" alt="Banner 16:9">
-              <div class="card-body">
-                <h6 class="card-text">Veja os Orientadores</h6>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="card">
-            <a class="card-link" href=<?php echo "${base_url}/agenda/eventos"; ?>>
-              <img class="card-img-top" src="assets/images/banner.png" alt="Banner 16:9">
-              <div class="card-body">
-                <h6 class="card-text">Confira os Eventos</h6>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="card">
-            <a class="card-link" href=<?php echo "${base_url}/curso#disciplinas"; ?>>
-              <img class="card-img-top" src="assets/images/banner.png" alt="Banner 16:9">
-              <div class="card-body">
-                <h6 class="card-text">Mapa de Disciplinas</h6>
-              </div>
-            </a>
-          </div>
+        <div class="card-deck">
+          <?php
+            $cursor = filter_search([], [], $database, 'discover_links', $manager);
+            $discover_links = $cursor->toArray();
+
+            $items = array_rand($discover_links, 5);
+
+            for ($i = 0; $i < 4; $i++) {
+              echo '<div class="card">';
+
+              printf("<a href=\"${base_url}/%s\">", $discover_links[$items[$i]]->permalink);
+              echo "<img class=\"card-img-top\" src=\"${base_url}\" alt=\"Banner 16:9\">";
+              printf("<div class=\"card-body\"><h6 class=\"card-text\">%s</h6></div>", $discover_links[$items[$i]]->permalink);
+
+              echo '</a></div>';
+            }
+          ?>
         </div>
       </div>
     </div>
