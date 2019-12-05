@@ -5,7 +5,7 @@
   $page_number = (isset($_GET['p'])) ? $_GET['p'] : 1;
   $page_size = (isset($_GET['n'])) ? $_GET['n'] : 10;
 
-  $page_title = sprintf("%s", $category != '' ? $category : 'Posts');
+  $page_title = sprintf('%s', $category != '' ? 'Publicações em' . $category : 'Posts');
 
   require_once '../vendor/autoload.php';
   require 'assets/templates/head.php';
