@@ -40,6 +40,7 @@
         <!-- Copyright Statement -->
         <div class="col-xl-12">
           <p>Todos os direitos reservados &copy; <?php echo date('Y'); ?> Unipampa</p>
+          <p><?php echo "Feito por \u{1F393} com muito \u{2615}" ?></p>
         </div>
       </div>
     </div>
