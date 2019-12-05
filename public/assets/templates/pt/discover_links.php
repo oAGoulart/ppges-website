@@ -2,7 +2,7 @@
   <li class="list-group-item text-uppercase">Descubra Mais</li>
   <?php
     $cursor = filter_search([], [], $database, 'discover_links', $manager);
-    $discover_links = $cursor->setTypeMap(['root' => 'array', 'document' => 'array', 'array' => 'array']);
+    $discover_links = $cursor->toArray();
 
     $items = array_rand($discover_links, 4);
 

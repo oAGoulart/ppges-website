@@ -3,9 +3,9 @@
   if (isset($_COOKIE['lang'])) {
     if (!isset($lang)) {
       $lang = $_COOKIE['lang'];
-    } else {
-      $lang = substr($lang, 0, 2);
     }
+
+    $lang = substr($lang, 0, 2);
   }
   else {
     if (!isset($lang)) {
