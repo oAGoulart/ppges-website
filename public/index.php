@@ -84,7 +84,7 @@
         </div>
         <div class="col-sm-3">
           <div class="card">
-            <a class="card-link" href=<?php echo "${base_url}/disciplinas"; ?>>
+            <a class="card-link" href=<?php echo "${base_url}/curso#disciplinas"; ?>>
               <img class="card-img-top" src="assets/images/banner.png" alt="Banner 16:9">
               <div class="card-body">
                 <h6 class="card-text">Mapa de Disciplinas</h6>
