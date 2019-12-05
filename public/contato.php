@@ -1,12 +1,12 @@
 <?php
-  $page_title = 'Curso';
+  $page_title = 'Contato';
 
   require_once '../vendor/autoload.php';
   require 'assets/templates/head.php';
   require "assets/templates/${lang}/non_sticky_nav.php";
   require "assets/templates/${lang}/sticky_header.php";
 
-  $html = markdown2html(file_get_contents("assets/markdown/${lang}/curso.md"));
+  $html = markdown2html(file_get_contents("assets/markdown/${lang}/contato.md"));
 
   require "assets/templates/${lang}/post.php";
 

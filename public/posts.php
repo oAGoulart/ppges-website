@@ -5,7 +5,7 @@
   $page_number = (isset($_GET['p'])) ? $_GET['p'] : 1;
   $page_size = (isset($_GET['n'])) ? $_GET['n'] : 10;
 
-  $page_title = sprintf('%s', $category != '' ? 'Publicações em' . $category : 'Posts');
+  $page_title = sprintf('%s', $category != '' ? 'Publicações em ' . $category : 'Posts');
 
   require_once '../vendor/autoload.php';
   require 'assets/templates/head.php';
@@ -30,7 +30,7 @@
     $pages = $count / $page_size;
 
     echo '<main class="my-5"><div class="container"><div class="row"><div class="col-sm-12">';
-    printf("<h1>%s: (${count} resultados)</h1><br>", $category != '' ? $category : 'Posts');
+    printf("<h1>%s: (${count} resultados)</h1><br>", $category != '' ? 'Publicações em ' $category : 'Posts');
 
     if ($count != 0) {
       foreach ($cursor as $document) {
