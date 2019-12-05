@@ -39,22 +39,22 @@ Rodrigo Brandão Mansilha
 
 # Disciplinas
 
-|---|---|---|---|---|
-|Código|Disciplina|Obrigatória|CH|CR|
-|AL5082|Otimização e Complexidade de Algoritmos|Sim|60|4|
-|AL5083|Engenharia de Software Experimental|Sim|60|4|
-|AL5084|Desenvolvimento de Software|Sim|60|4|
-|AL5085|Verificação e Validação de Software|Não|60|4|
-|AL5086|Segurança de Sistemas|Não|60|4|
-|AL5087|Projeto e Desenvolvimento de Programas Paralelos|Não|60|4|
-|AL5088|Programabilidade de Infraestruturas de Rede|Não|60|4|
-|AL5089|Modelagem de Software|Não|60|4|
-|AL5090|Engenharia de Software Orientada a Agentes|Não|60|4|
-|AL5091|Aprendizagem de Máquina Aplicada à Engenharia de Software|Não|30|2|
-|AL5092|Interação Humano-computador no Desenvolvimento de Software|Não|60|4|
-|AL5093|Processamento de Linguagem Natural Aplicado à Engenharia de Software|Não|30|2|
-|AL5094|Engenharia de Software Aplicada a Sistemas Embarcados|Não|60|4|
-|AL5013|Estágio Supervisionado de Docência|Sim|15|1|
-|AL5038|Exame de Proficiência de Língua Estrangeira|Sim|–|–|
-|AL5039|Exame de Qualificação|Sim|–|–|
-|AL5040|Defesa de Dissertação|Sim|–|–|
+|Código|Disciplina                                                          |Obrigatória|CH |CR |
+|------|--------------------------------------------------------------------|-----------|---|---|
+|AL5082|Otimização e Complexidade de Algoritmos                             |Sim        |60 |4  |
+|AL5083|Engenharia de Software Experimental                                 |Sim        |60 |4  |
+|AL5084|Desenvolvimento de Software                                         |Sim        |60 |4  |
+|AL5085|Verificação e Validação de Software                                 |Não        |60 |4  |
+|AL5086|Segurança de Sistemas                                               |Não        |60 |4  |
+|AL5087|Projeto e Desenvolvimento de Programas Paralelos                    |Não        |60 |4  |
+|AL5088|Programabilidade de Infraestruturas de Rede                         |Não        |60 |4  |
+|AL5089|Modelagem de Software                                               |Não        |60 |4  |
+|AL5090|Engenharia de Software Orientada a Agentes                          |Não        |60 |4  |
+|AL5091|Aprendizagem de Máquina Aplicada à Engenharia de Software           |Não        |30 |2  |
+|AL5092|Interação Humano-computador no Desenvolvimento de Software          |Não        |60 |4  |
+|AL5093|Processamento de Linguagem Natural Aplicado à Engenharia de Software|Não        |30 |2  |
+|AL5094|Engenharia de Software Aplicada a Sistemas Embarcados               |Não        |60 |4  |
+|AL5013|Estágio Supervisionado de Docência                                  |Sim        |15 |1  |
+|AL5038|Exame de Proficiência de Língua Estrangeira                         |Sim        |–  |–  |
+|AL5039|Exame de Qualificação                                               |Sim        |–  |–  |
+|AL5040|Defesa de Dissertação                                               |Sim        |–  |–  |
