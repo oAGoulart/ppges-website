@@ -18,7 +18,7 @@
           <?php
             echo "<h1>${page_title}</h1><br>";
 
-            echo '<div class="list-group">'
+            echo '<div class="list-group">';
 
             foreach ($cursor as $document) {
               echo '<div class="list-group-item">';
@@ -26,7 +26,7 @@
               echo '</div>';
             }
 
-            echo '</div>'
+            echo '</div>';
           ?>
         </div>
 
