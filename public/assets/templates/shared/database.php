@@ -20,15 +20,15 @@
     return NULL;
   }
 
-  function query_count($query, $database, $collection, $manager)
+  function filter_count($filter, $database, $collection, $manager)
   {
-    if ($query != '') {
+    if ($filter != []) {
       $options = [
         'allowPartialResults' => true,
         'projection' => ['_id' => 1]
       ];
 
-      $cursor = query_search($query, $options, $database, $collection, $manager);
+      $cursor = filter_search($filter, $options, $database, $collection, $manager);
 
       // Count number of documents returned
       $count = 0;
@@ -37,6 +37,17 @@
       }
       
       return $count;
+    }
+
+    return 0;
+  }
+
+  function query_count($query, $database, $collection, $manager)
+  {
+    if ($query != '') {
+      $filter = ['$text' => ['$search' => "${query}"]];
+
+      return filter_count($filter, $options, $database, $collection, $manager);
     }
 
     return 0;

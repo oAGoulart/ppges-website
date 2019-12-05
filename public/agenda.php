@@ -1,4 +1,6 @@
 <?php
+  $category = (isset($_GET['category'])) ? $_GET['category'] : '';
+
   $page_title = "Agenda";
 
   require_once '../vendor/autoload.php';
