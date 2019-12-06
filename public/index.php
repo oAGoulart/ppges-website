@@ -10,14 +10,14 @@
     <div class="container recent-feed">
       <div class="row align-items-center">
         <!-- Main Card -->
-        <div class="col-sm-9">
+        <div class="col-md-9">
           <div class="card bg-dark">
             <a href="#"><img class="card-img" src="assets/images/banner.png" alt="Banner 16:9"></a>
           </div>
         </div>
 
         <!-- Other Cards -->
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <div class="row my-3">
             <div class="col-sm">
               <div class="card bg-dark">
