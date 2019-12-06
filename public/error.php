@@ -6,9 +6,9 @@
 <body>
   <?php
     if (isset($_SERVER['REDIRECT_STATUS'])) {
-      echo 'Error:' , $_SERVER['REDIRECT_STATUS'];
+      echo 'Error:', $_SERVER['REDIRECT_STATUS'];
     } else {
-      echo 'Error:' , '503';
+      echo 'Error:', '503';
     }
   ?>
 </body>

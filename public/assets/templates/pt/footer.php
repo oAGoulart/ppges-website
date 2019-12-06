@@ -5,7 +5,7 @@
         <!-- Unipampa Logo -->
         <div class="col-sm-9">
           <a href="https://unipampa.edu.br/portal/">
-            <img alt="Unipampa" id="unipampa" src=<?php echo "${base_url}/assets/images/unipampa.jpg"; ?>>
+            <img alt="Unipampa" id="unipampa" src=<?php echo $base_url, '/assets/images/unipampa.jpg'; ?>>
           </a>
         </div>
 
@@ -13,22 +13,22 @@
         <div class="col-sm-3">
           <ul class="list-group">
             <li class="list-group-item p-1">
-              <a class="footer-link" href=<?php echo "${base_url}/posts"; ?>>
+              <a class="footer-link" href=<?php echo $base_url, '/posts'; ?>>
                 Publicações
               </a>
             </li>
             <li class="list-group-item p-1">
-              <a class="footer-link" href=<?php echo "${base_url}/identidade"; ?>>
+              <a class="footer-link" href=<?php echo $base_url, '/identidade'; ?>>
                 Identidade Visual
               </a>
             </li>
             <li class="list-group-item p-1">
-              <a class="footer-link" href=<?php echo "${base_url}/ajuda"; ?>>
+              <a class="footer-link" href=<?php echo $base_url, '/ajuda"' ?>>
                 Ajuda
               </a>
             </li>
             <li class="list-group-item p-1">
-              <a class="footer-link" href=<?php echo "${base_url}/mapa"; ?>>
+              <a class="footer-link" href=<?php echo $base_url, '/mapa'; ?>>
                 Mapa do Site
               </a>
             </li>

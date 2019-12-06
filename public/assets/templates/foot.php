@@ -8,9 +8,9 @@
       echo '<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>';
       echo '<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>';
 
-      echo "<script src=\"${base_url}/assets/js/auth.js\"></script>";
+      echo '<script src="', $base_url, '/assets/js/auth.js"></script>';
     } else {
-      echo "<script src=\"${base_url}/assets/js/navbar.js\"></script>";
+      echo '<script src="', $base_url, '/assets/js/navbar.js"></script>';
     }
   ?>
 </body>

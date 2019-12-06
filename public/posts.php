@@ -13,11 +13,17 @@
   require "assets/templates/${lang}/sticky_header.php";
 
   if ($permalink != '' && $category != '') {
-    $document = filter_search(['category' => $category, 'permalink' => $permalink], ['limit' => 1], $database, 'posts', $manager);
+    $cursor = filter_search(['category' => $category, 'permalink' => $permalink], ['limit' => 1], $database, 'posts', $manager);
 
-    $html = markdown2html($document->body);
+    $document = $cursor->toArray()[0];
 
-    require 'assets/templates/pt/post.php';
+    if (isset($document->body)) {
+      $html = markdown2html($document->body);
+
+      require "assets/templates/${lang}/post.php";
+    } else {
+      echo "<p class=\"text-center\">Esta publicação não existe! \u{1F62D}</p>";
+    }
   } else {
     $options = [
       'allowPartialResults' => true,
@@ -30,12 +36,13 @@
     $pages = $count / $page_size;
 
     echo '<main class="my-5"><div class="container"><div class="row"><div class="col-md-12">';
-    printf("<h1>%s: (${count} resultados)</h1><br>", $category != '' ? 'Publicações em ' . $category : 'Posts');
+    printf('<h1>%s: (%i resultados)</h1><br>', $category != '' ? 'Publicações em ' . $category : 'Posts', $count);
 
     if ($count != 0) {
       foreach ($cursor as $document) {
-        echo "<a href=\"${base_url}/" . $document->category . '/' . $document->permalink . '"><h2>' . $document->title . '</h2></a>';
-        echo markdown2html(substr($document->body, 0, 500) . ' <mark> ... </mark>');
+        echo '<a href="', $base_url, '"', $document->category, '/',
+             $document->permalink, '"><h2>', $document->title, '</h2></a>';
+        echo markdown2html(substr($document->body, 0, 500), ' <mark> ... </mark>');
         echo '<hr>';
       }
     } else {

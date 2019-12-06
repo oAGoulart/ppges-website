@@ -27,5 +27,11 @@
     return preg_replace("/\x26?p=[0-9]*/i", '', $request) . "\x26p=${new_number}";
   }
 
-  // Site base url
-  $base_url = "https://${_SERVER['SERVER_NAME']}";
+  function base_url() {
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' 
+                 || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
+
+    return $protocol . $_SERVER['HTTP_HOST'];
+  }
+
+  $base_url = base_url();
