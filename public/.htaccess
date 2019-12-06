@@ -9,10 +9,10 @@ RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ /%1/$1 [R=301,L]
 
 # Redirect pretty urls to proper .php files
-RewriteRule ^agenda/?(.*)$ /agenda\.php?category=$1 [L]
-RewriteRule ^(informes|pesquisas)/?(.*)$ /posts\.php?category=$1&permalink=$2 [L]
-RewriteRule ^(contato|curso|sobre|identidade|mapa|ajuda) /static\.php?page=$1 [L]
-RewriteRule ^(.*)$ /$1.php [L]
+RewriteRule ^agenda(/(.*))?$ /agenda.php?category=$2 [L]
+RewriteRule ^(informes|pesquisas)(/(.*))?$ /posts.php?category=$1&permalink=$3 [L]
+RewriteRule ^(contato|curso|sobre|identidade|mapa|ajuda) /static.php?page=$1 [L]
+RewriteRule ^([^/.]+)$ /$1.php [L]
 
 # Error handling
 ErrorDocument 400 /error.php
