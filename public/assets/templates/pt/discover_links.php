@@ -1,4 +1,4 @@
-<ul class="list-group discover-links">
+<ul class="list-group discover-links text-wrap">
   <li class="list-group-item text-uppercase">Descubra Mais</li>
   <?php
     $cursor = filter_search([], [], $database, 'discover_links', $manager);

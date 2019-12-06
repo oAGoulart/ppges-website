@@ -13,8 +13,8 @@
         <div class="col-sm-3">
           <ul class="list-group">
             <li class="list-group-item p-1">
-              <a class="footer-link" href=<?php echo "${base_url}/ouvidoria"; ?>>
-                Ouvidoria
+              <a class="footer-link" href=<?php echo "${base_url}/posts"; ?>>
+                Publicações
               </a>
             </li>
             <li class="list-group-item p-1">
@@ -23,8 +23,8 @@
               </a>
             </li>
             <li class="list-group-item p-1">
-              <a class="footer-link" href=<?php echo "${base_url}/institucional"; ?>>
-                Institucional
+              <a class="footer-link" href=<?php echo "${base_url}/ajuda"; ?>>
+                Ajuda
               </a>
             </li>
             <li class="list-group-item p-1">
@@ -40,7 +40,7 @@
         <!-- Copyright Statement -->
         <div class="col-xl-12">
           <p>Todos os direitos reservados &copy; <?php echo date('Y'); ?> Unipampa</p>
-          <p><?php echo "Feito por \u{1F393} com muito \u{2615}" ?></p>
+          <p><?php echo "Feito por \u{1F469} com muito \u{2615}" ?></p>
         </div>
       </div>
     </div>
