@@ -1,10 +1,10 @@
 <?php
-  if (isset($_GET['static'])) {
-    $static = ($_GET['static'] != '') ? $_GET['static'] : 'sobre';
+  if (isset($_GET['page'])) {
+    $static = ($_GET['page'] != '') ? $_GET['page'] : 'sobre';
   } else {
     $static = 'sobre';
   }
-  
+
   $page_title = ucfirst($static);
 
   require_once '../vendor/autoload.php';
