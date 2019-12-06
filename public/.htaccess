@@ -10,12 +10,12 @@ RewriteRule ^(.*)$ /%1/$1 [R=301,L]
 
 # Redirect pretty urls to proper .php files
 RewriteRule ^agenda(/(.*))?$ /agenda.php?category=$2 [L]
-RewriteRule ^informes(/(.*))?$ /posts.php?category=informes&permalink=$3 [L]
-RewriteRule ^pesquisas(/(.*))?$ /posts.php?category=pesquisas&permalink=$3 [L]
+RewriteRule ^informes(/(.*))?$ /posts.php?category=informes&permalink=$2 [L]
+RewriteRule ^pesquisas(/(.*))?$ /posts.php?category=pesquisas&permalink=$2 [L]
 RewriteRule ^(contato|curso|sobre|identidade|mapa|ajuda) /static.php?page=$1 [L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^/.]+)\/?$ /$1.php [L]
+RewriteRule ^([^.]+?)\/?$ /$1.php [L]
 
 # Error handling
 ErrorDocument 400 /error.php
