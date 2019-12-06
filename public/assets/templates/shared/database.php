@@ -45,14 +45,9 @@
   function query_count($query, $database, $collection, $manager)
   {
     if ($query != '') {
-      $options = [
-        'allowPartialResults' => true,
-        'projection' => ['_id' => 1]
-      ];
-
       $filter = ['$text' => ['$search' => "${query}"]];
 
-      return filter_count($filter, $options, $database, $collection, $manager);
+      return filter_count($filter, $database, $collection, $manager);
     }
 
     return 0;
