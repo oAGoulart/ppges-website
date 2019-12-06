@@ -15,7 +15,7 @@ RewriteRule ^pesquisas(/(.*))?$ /posts.php?category=pesquisas&permalink=$3 [L]
 RewriteRule ^(contato|curso|sobre|identidade|mapa|ajuda) /static.php?page=$1 [L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^/.]+)\/?$ /$1.php [L]
+RewriteRule ^([^.]+?)\/?$ /$1.php [L]
 
 # Error handling
 ErrorDocument 400 /error.php
