@@ -42,7 +42,7 @@
       foreach ($cursor as $document) {
         echo '<a href="', $base_url, '"', $document->category, '/',
              $document->permalink, '"><h2>', $document->title, '</h2></a>';
-        echo markdown2html(substr($document->body, 0, 500), ' <mark> ... </mark>');
+        echo markdown2html(substr($document->body, 0, 500) . ' <mark> ... </mark>');
         echo '<hr>';
       }
     } else {
