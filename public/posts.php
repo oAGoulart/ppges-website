@@ -26,7 +26,7 @@
 
       require "assets/templates/${lang}/post.php";
     } else {
-      echo "<main class=\"py-\5"><p class=\"text-center\">Esta publicação não existe! \u{1F62D}</p></main>";
+      echo "<main class=\"py-5\"><p class=\"text-center\">Esta publicação não existe! \u{1F62D}</p></main>";
     }
   } else {
     $options = [
