@@ -6,20 +6,20 @@ RewriteBase /
 
 # Redirect any www requests
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteRule ^(.*)$ /%1/$1 [R=301,L]
 
 # Remove trailing slash from files
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^/]+)/$ ./$1 [R=301,L]
+RewriteRule ^([^/]+)/$ /$1 [R=301,L]
 
 # Redirect .php requests to pretty urls
 RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
-RewriteRule ^(.+)\.php$ ./$1 [R=301,L]
+RewriteRule ^(.+)\.php$ /$1 [R=301,L]
 
 # Redirect pretty urls to proper .php files
-RewriteRule ^agenda/?(.*)$ agenda\.php?category=$1& [L,QSA]
-RewriteRule ^(informes|pesquisas)/?(.*)$ posts\.php?category=$1&permalink=$2 [L,QSA]
-RewriteRule ^(contato|curso|sobre|identidade|mapa|ajuda) static\.php?page=$1 [L,QSA]
+RewriteRule ^agenda/?(.*)$ /agenda\.php?category=$1& [L,QSA]
+RewriteRule ^(informes|pesquisas)/?(.*)$ /posts\.php?category=$1&permalink=$2& [L,QSA]
+RewriteRule ^(contato|curso|sobre|identidade|mapa|ajuda) /static\.php?page=$1& [L,QSA]
 RewriteRule ^([^/.]+)$ $1.php [L]
 
 # Error handling
