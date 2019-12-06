@@ -5,7 +5,11 @@
   $page_number = (isset($_GET['p'])) ? $_GET['p'] : 1;
   $page_size = (isset($_GET['n'])) ? $_GET['n'] : 10;
 
-  $page_title = sprintf('%s', $category != '' ? 'Publicações em ' . $category : 'Posts');
+  if ($permalink != '') {
+    $page_title = ucfirst($permalink);
+  } else {
+    $page_title = sprintf('%s', $category != '' ? 'Publicações em ' . $category : 'Posts');
+  }
 
   require_once '../vendor/autoload.php';
   require 'assets/templates/head.php';
@@ -22,7 +26,7 @@
 
       require "assets/templates/${lang}/post.php";
     } else {
-      echo "<p class=\"text-center\">Esta publicação não existe! \u{1F62D}</p>";
+      echo "<main py-5><p class=\"text-center\">Esta publicação não existe! \u{1F62D}</p></main>";
     }
   } else {
     $options = [
