@@ -29,7 +29,7 @@
     $count = filter_count(['category' => $category, 'type' => $type], $database, $collection, $manager);
     $pages = $count / $page_size;
 
-    echo '<main class="my-5"><div class="container"><div class="row"><div class="col-sm-12">';
+    echo '<main class="my-5"><div class="container"><div class="row"><div class="col-md-12">';
     printf("<h1>%s: (${count} resultados)</h1><br>", $category != '' ? 'Publicações em ' . $category : 'Posts');
 
     if ($count != 0) {

@@ -26,7 +26,7 @@
     <div class="container">
       <!-- List of Posts -->
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <?php
             echo "<h1>Buscar por ${query}: (${count} resultados)</h1><br>";
 

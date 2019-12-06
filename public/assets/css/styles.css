@@ -26,6 +26,10 @@ th {
   border: solid 2px rgb(220, 220, 220);
 }
 
+.list-group-item {
+  word-break: break-all;
+}
+
 /* Navbar and Header of the Page */
 nav:not(#pagination) {
   background-color: rgb(0, 144, 69);

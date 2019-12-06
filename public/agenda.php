@@ -14,9 +14,14 @@
   <!-- Page's Contents -->
   <main class="my-5">
     <div class="container">
-      <!-- List of Posts -->
-      <div class="row">
-        <div class="col-sm-9">
+      <div class="row flex-md-row-reverse">
+        <!-- Discover Links -->
+        <div class="col-md-3">
+          <?php require "assets/templates/${lang}/discover_links.php"; ?>
+        </div>
+
+        <!-- List of Events -->
+        <div class="col-md-9">
           <?php
             echo "<h1>${page_title}</h1><br>";
 
@@ -26,11 +31,6 @@
               echo '</div>';
             }
           ?>
-        </div>
-
-        <!-- Discover Links -->
-        <div class="col-sm-3">
-          <?php require "assets/templates/${lang}/discover_links.php"; ?>
         </div>
       </div>
     </div>
