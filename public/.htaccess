@@ -4,11 +4,6 @@ RewriteEngine On
 # This may be necessary on some servers
 RewriteBase /
 
-# Redirect permalinks to queries
-RewriteRule ^agenda/?(.*)$ /agenda\.php?category=$1&%{QUERY_STRING} [L]
-RewriteRule ^(informes|pesquisas)/?(.*)$ /posts\.php?category=$1&permalink=$2&%{QUERY_STRING} [L]
-RewriteRule ^(contato|curso|sobre|identidade|mapa|ajuda) /static\.php?page=$1&%{QUERY_STRING} [L]
-
 # Redirect any www requests
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ /%1/$1 [R=301,L]
@@ -23,6 +18,11 @@ RewriteRule ^(.+)\.php$ /$1 [R=301,L]
 
 # Redirect pretty urls to proper .php files
 RewriteRule ^([^/.]+)$ /$1.php [L]
+
+# Redirect permalinks to queries
+RewriteRule ^agenda/?(.*)$ /agenda\.php?category=$1&%{QUERY_STRING} [L]
+RewriteRule ^(informes|pesquisas)/?(.*)$ /posts\.php?category=$1&permalink=$2&%{QUERY_STRING} [L]
+RewriteRule ^(contato|curso|sobre|identidade|mapa|ajuda) /static\.php?page=$1&%{QUERY_STRING} [L]
 
 # Error handling
 ErrorDocument 400 /error.php
