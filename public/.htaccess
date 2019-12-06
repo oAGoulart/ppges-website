@@ -12,10 +12,6 @@ RewriteRule ^(.*)$ /%1/$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^/]+)/$ /$1 [R=301,L]
 
-# Redirect .php requests to pretty urls
-RewriteCond %{REQUEST_FILENAME} ^(.+)\.php$
-RewriteRule ^(.+)\.php$ /$1 [R=301,L]
-
 # Redirect pretty urls to proper .php files
 RewriteRule ^([^/.]+)$ /$1.php [L]
 
