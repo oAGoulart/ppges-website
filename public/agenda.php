@@ -1,7 +1,7 @@
 <?php
   $category = (isset($_GET['category'])) ? $_GET['category'] : '';
 
-  $page_title = "Agenda";
+  $page_title = 'Agenda';
 
   require_once '../vendor/autoload.php';
   require 'assets/templates/head.php';
@@ -23,7 +23,7 @@
         <!-- List of Events -->
         <div class="col-md-9">
           <?php
-            echo "<h1>${page_title}</h1><br>";
+            echo '<h1>', $page_title, '</h1><br>';
 
             foreach ($cursor as $document) {
               echo '<div class="card">';
