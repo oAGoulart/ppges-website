@@ -15,8 +15,15 @@ a:hover {
 }
 
 mark {
+  padding: 0.1rem;
   color: white;
   background-color: rgb(225, 225, 225);
+}
+
+td,
+th {
+  padding: 0.5rem;
+  border: solid 2px rgb(220, 220, 220);
 }
 
 /* Navbar and Header of the Page */

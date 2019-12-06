@@ -1,20 +1,30 @@
 # Coordenação
 
-## Coordenador:
-+ Prof. Dr. Elder de Macedo Rodrigues [![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://elderrodrigues@unipampa.edu.br)
+## Coordenador
++ Prof. Dr. Elder de Macedo Rodrigues<br>
+[![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://elderrodrigues@unipampa.edu.br)
 
-## Coordenador Substituto:
-+ Prof. Dr. Fábio Paulo Basso [![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://fabiobasso@unipampa.edu.br)
+## Coordenador Substituto
++ Prof. Dr. Fábio Paulo Basso<br>
+[![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://fabiobasso@unipampa.edu.br)
 
-## Comissão de Pós-Graduação:
-+ Membro Titular: Prof. Dr. Rodrigo Brandão Mansilha [![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://rodrigomansilha@unipampa.edu.br)
-+ Membro Titular: Prof. Dr. João Pablo Silva da Silva [![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://joaosilva@unipampa.edu.br)
-+ Membro Titular: Prof. Dr. Arthur Francisco Lorenzon [![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://arthurlorenzon@unipampa.edu.br)
-+ Membro Titular: Prof. Dr. Gilleanes Thorwald Araujo Guedes [![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://gilleanesguedes@unipampa.edu.br)
-+ Membro Suplente: Prof. Mr. Diego Luis Kreutz [![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://diego.kreutz@unipampa.edu.br)
-+ Membro Suplente, Coordenador do Curso de ES: Prof. Dr. Maicon Bernardino da Silveira [![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://bernardino@unipampa.edu.br)
-+ Membro Suplente, Coordenador do Curso de CC: Prof. Dr. Marcelo Caggiani Luizelli [![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://mcluizelli@gmail.com)
-+ Membro Suplente, Coordenador Acadêmico dos Cursos de CC e ES: Prof. Dr. Claudio Schepke [![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://claudioschepke@unipampa.edu.br)
+## Comissão de Pós-Graduação
++ Membro Titular: Prof. Dr. Rodrigo Brandão Mansilha<br>
+[![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://rodrigomansilha@unipampa.edu.br)
++ Membro Titular: Prof. Dr. João Pablo Silva da Silva<br>
+[![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://joaosilva@unipampa.edu.br)
++ Membro Titular: Prof. Dr. Arthur Francisco Lorenzon<br>
+[![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://arthurlorenzon@unipampa.edu.br)
++ Membro Titular: Prof. Dr. Gilleanes Thorwald Araujo Guedes<br>
+[![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://gilleanesguedes@unipampa.edu.br)
++ Membro Suplente: Prof. Mr. Diego Luis Kreutz<br>
+[![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://diego.kreutz@unipampa.edu.br)
++ Membro Suplente, Coordenador do Curso de ES: Prof. Dr. Maicon Bernardino da Silveira<br>
+[![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://bernardino@unipampa.edu.br)
++ Membro Suplente, Coordenador do Curso de CC: Prof. Dr. Marcelo Caggiani Luizelli<br>
+[![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://mcluizelli@gmail.com)
++ Membro Suplente, Coordenador Acadêmico dos Cursos de CC e ES: Prof. Dr. Claudio Schepke<br>
+[![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://claudioschepke@unipampa.edu.br)
 
 ## Comissão de Bolsas
 
@@ -34,8 +44,9 @@ João Pablo Silva da Silva
 
 Rodrigo Brandão Mansilha
 
-## Secretário Acadêmico:
-+ Thiago Gomes [![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://thiagogomes@unipampa.edu.br)
+## Secretário Acadêmico
++ Thiago Gomes<br>
+[![E-mail](https://img.shields.io/badge/Email-Contate-52b5a8ff?style=flat-square&logo=gmail)](mailto://thiagogomes@unipampa.edu.br)
 
 # Disciplinas
 

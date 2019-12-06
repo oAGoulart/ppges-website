@@ -10,8 +10,8 @@ Você pode nos encontrar nas seguintes mídias sociais:
 
 ## E-Mail
 
-Se você preferir confira os [contatos](/curso#coordenacao) da equipe coordenadora.
+Se você preferir, confira os [contatos](/curso#coordenacao) da equipe coordenadora.
 
 ## Outros
 
-Ou nos encontre pessoalmente na Unipampa.
+Ou nos procure pessoalmente na UNIPAMPA.

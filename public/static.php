@@ -1,12 +1,13 @@
 <?php
-  $page_title = 'Contato';
+  $static = (isset($_GET['static']) ? $_GET['static'] : 'sobre');
+  $page_title = ucfirst($static);
 
   require_once '../vendor/autoload.php';
   require 'assets/templates/head.php';
   require "assets/templates/${lang}/non_sticky_nav.php";
   require "assets/templates/${lang}/sticky_header.php";
 
-  $html = markdown2html(file_get_contents("assets/markdown/${lang}/contato.md"));
+  $html = markdown2html(file_get_contents("assets/markdown/${lang}/${static}.md"));
 
   require "assets/templates/${lang}/post.php";
 
