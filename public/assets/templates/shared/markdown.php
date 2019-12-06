@@ -34,4 +34,4 @@
     return $protocol . $_SERVER['HTTP_HOST'];
   }
 
-  $base_url = base_url();
+  $base_url = 'https://' . $_SERVER['HTTP_HOST'];
