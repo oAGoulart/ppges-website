@@ -21,7 +21,7 @@
         <!-- List of Students -->
         <div class="col-md-9">
           <?php
-            echo "<h1>${page_title}</h1><br>";
+            echo '<h1>', $page_title, '</h1><br>';
 
             echo '<div class="list-group">';
 

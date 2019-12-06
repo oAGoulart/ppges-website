@@ -21,7 +21,7 @@
         <!-- List of Professors -->
         <div class="col-md-9">
           <?php
-            echo "<h1>${page_title}</h1><br>";
+            echo '<h1>', $page_title '</h1><br>';
 
             foreach ($cursor as $document) {
               echo '<div class="card">';

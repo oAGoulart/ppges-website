@@ -28,12 +28,12 @@
       <div class="row">
         <div class="col-md-12">
           <?php
-            echo "<h1>Buscar por ${query}: (${count} resultados)</h1><br>";
+            echo '<h1>Buscar por ', $query, ': (', $count, ' resultados)</h1><br>';
 
             if ($count != 0) {
               foreach ($cursor as $document) {
-                echo "<a href=\"${base_url}/posts/" , $document->permalink , "\"><h2>" , $document->title , "</h2></a>";
-                echo markdown2html(substr($document->body, 0, 500) . ' <mark> ... </mark>');
+                echo '<a href="', $base_url, '/posts/', $document->permalink, '"><h2>', $document->title, '</h2></a>';
+                echo markdown2html(substr($document->body, 0, 500), ' <mark> ... </mark>');
                 echo '<hr>';
               }
             } else {
