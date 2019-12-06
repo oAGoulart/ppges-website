@@ -21,7 +21,7 @@ RewriteRule ^([^/.]+)$ $1.php [L]
 RewriteRule ^agenda/?(.*)$ agenda\.php?category=$1&%{QUERY_STRING} [L]
 RewriteRule ^informes/?(.*)$ posts\.php?category=informes&permalink=$1&%{QUERY_STRING} [L]
 RewriteRule ^pesquisas/?(.*)$ posts\.php?category=pesquisas&permalink=$1&%{QUERY_STRING} [L]
-RewriteRule ^(contato|curso|sobre|identidade) static\.php?page=$1&%{QUERY_STRING} [L]
+RewriteRule ^(contato|curso|sobre|identidade|mapa|ajuda) static\.php?page=$1&%{QUERY_STRING} [L]
 
 # Error handling
 ErrorDocument 400 /error.php
