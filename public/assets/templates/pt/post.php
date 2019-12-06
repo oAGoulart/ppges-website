@@ -2,11 +2,6 @@
   <main class="my-5">
     <div class="container">
       <div class="row flex-md-row-reverse">
-        <!-- Main Text Body -->
-        <div class="col-md-9">
-          <?php echo $html; ?>
-        </div>
-        
         <!-- Discover Links -->
         <div class="col-md-3">
           <ul class="list-group discover-links text-wrap">
@@ -14,6 +9,11 @@
             <?php echo header2toc($html) ?>
           </ul>
           <?php require 'discover_links.php'; ?>
+        </div>
+        
+        <!-- Main Text Body -->
+        <div class="col-md-9">
+          <?php echo $html; ?>
         </div>
       </div>
     </div>
