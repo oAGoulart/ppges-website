@@ -11,11 +11,10 @@ $(document).ready(function () {
       'rgb(55, 3, 133)',
       'rgb(3, 92, 133)',
       'rgb(3, 133, 118)',
-      'rgb(3, 133, 31)',
       'rgb(120, 133, 3)',
       'rgb(133, 94, 3)'
     ];
-    let percentage = randNum(10, 90);
+    let percentage = randNum(40, 60);
 
     $(this).css(
       'background-image',
