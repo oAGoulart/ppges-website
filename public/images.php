@@ -12,7 +12,7 @@
   imagefilledrectangle($img, 0, 0, $width, $height, $transparency);
 
   $font = (isset($_GET['font'])) ? "assets/fonts/${_GET['font']}.ttf" : 'assets/fonts/roboto/Roboto-Black.ttf';
-  $font_size = (isset($_GET['fontSize'])) ? $_GET['fontSize'] : 32;
+  $font_size = (isset($_GET['fontSize'])) ? $_GET['fontSize'] : 100;
   $text = (isset($_GET['text'])) ? $_GET['text'] : 'NO IMAGE FOUND';
 
   $text_size = imagettfbbox($font_size, 0, $font, $text);

@@ -4,7 +4,17 @@ function randNum(min, max) {
 
 $(document).ready(function () {
   $('.gradient').each(function() {
-    let colors = ['#ffd0d2', '#fffdd0', '#d0fffd', '#d0d2ff'];
+    let colors = [
+      'rgb(113, 3, 133)',
+      'rgb(133, 3, 101)',
+      'rgb(133, 3, 33)',
+      'rgb(55, 3, 133)',
+      'rgb(3, 92, 133)',
+      'rgb(3, 133, 118)',
+      'rgb(3, 133, 31)',
+      'rgb(120, 133, 3)',
+      'rgb(133, 94, 3)'
+    ];
     let firstGradient = randNum(10, 90);
 
     $(this).css(
