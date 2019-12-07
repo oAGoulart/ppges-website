@@ -11,7 +11,7 @@
   $white = imagecolorallocate($img, 255,255,255);
   imagefilledrectangle($img, 0, 0, $width, $height, $transparency);
 
-  $font = (isset($_GET['font'])) ? "assets/fonts/${_GET['font']}.ttf" : 'assets/fonts/roboto.ttf';
+  $font = (isset($_GET['font'])) ? "assets/fonts/${_GET['font']}.ttf" : 'assets/fonts/roboto/Roboto-Black.ttf';
   $font_size = (isset($_GET['fontSize'])) ? $_GET['fontSize'] : 120;
   $text = (isset($_GET['text'])) ? $_GET['text'] : 'NO IMAGE FOUND';
 
