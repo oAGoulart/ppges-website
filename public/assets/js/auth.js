@@ -17,7 +17,7 @@ var handleLogIn = function() {
   let password = $('#inputPassword')[0];
 
   $('#submitLoad')[0].classList.remove('d-none');
-  $('#submitLogin')[0].attr('disabled', true);
+  $('#submitLogin:eq(0)').attr('disabled', true);
 
   if (email && password) {
     firebase.auth().signInWithEmailAndPassword(email.value, password.value).catch(function(error) {
@@ -66,7 +66,7 @@ function initAuth() {
             $('#logoutCard')[0].classList.remove('d-none');
             $('#loginCard')[0].classList.add('d-none');
             $('#submitLoad')[0].classList.add('d-none');
-            $('#submitLogin')[0].attr('disabled', false);
+            $('#submitLogin:eq(0)').attr('disabled', false);
           }
 
           $('#console').html(req.responseText);

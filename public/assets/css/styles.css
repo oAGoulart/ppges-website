@@ -227,7 +227,7 @@ footer .list-group-item {
 }
 
 #loginCard {
-  width: 22vw;
+  width: 30vw;
   margin: auto;
 }
 
@@ -237,6 +237,6 @@ footer .list-group-item {
   }
 
   #loginCard {
-    width: 264px;
+    width: 360px;
   }
 }
