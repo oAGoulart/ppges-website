@@ -15,7 +15,7 @@
             'limit' => 4
           ];
 
-          $cursor = filter_search([], $options, $database, $collection, $manager).toArray();
+          $cursor = filter_search([], $options, $database, $collection, $manager)->toArray();
 
           echo '<div class="col-md-9"><div class="card bg-dark">';
           printf(
