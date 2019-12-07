@@ -15,14 +15,14 @@ $(document).ready(function () {
       'rgb(120, 133, 3)',
       'rgb(133, 94, 3)'
     ];
-    let firstGradient = randNum(10, 90);
+    let percetage = randNum(10, 90);
 
     $(this).css(
       'background-image',
       'linear-gradient(141deg, '
-      + colors[randNum(0, 4)] + ' '
-      + firstGradient + '%, '
-      + colors[randNum(0, 4)] + ')'
+      + colors[randNum(0, 8)] + ' '
+      + percetage + '%, '
+      + colors[randNum(0, 8)] + ')'
     );
   });
 });
