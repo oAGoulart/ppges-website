@@ -221,6 +221,12 @@ footer .list-group-item {
   text-decoration: none;
 }
 
+/* Admin Panel */
+#loginLogo,
+#adminLogin {
+  border-color: rgb(220, 220, 220);
+}
+
 /* Maximum View Size Queries */
 .container {
   max-width: 90vw;
