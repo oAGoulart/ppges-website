@@ -35,3 +35,4 @@
   }
 
   $base_url = 'https://' . $_SERVER['HTTP_HOST'];
+  $img_gen = $base_url . '/images?text=';
