@@ -12,7 +12,9 @@
   require "assets/templates/${lang}/non_sticky_nav.php";
   require "assets/templates/${lang}/sticky_header.php";
 
-  $cursor = filter_search(['category' => $category], [], $database, 'agenda', $manager);
+  $filter = ($category != '') ? ['category' => $category] : [];
+
+  $cursor = filter_search($filter, [], $database, 'agenda', $manager);
 ?>
 
   <!-- Page's Contents -->

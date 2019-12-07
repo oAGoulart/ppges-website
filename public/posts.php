@@ -39,8 +39,14 @@
       'skip' => ($page_number - 1) * $page_size
     ];
 
-    $cursor = filter_search(['category' => $category, 'type' => $type], $options, $database, $collection, $manager);
-    $count = filter_count(['category' => $category, 'type' => $type], $database, $collection, $manager);
+    if ($category != '') {
+      $filter = ($type != '') ? ['category' => $category, 'type' => $type] : ['category' => $category];
+    } else {
+      $filter = [];
+    }
+
+    $cursor = filter_search($filter, $options, $database, $collection, $manager);
+    $count = filter_count($filter, $database, $collection, $manager);
     $pages = $count / $page_size;
 
     echo '<main class="my-5"><div class="container"><div class="row"><div class="col-md-12">';
