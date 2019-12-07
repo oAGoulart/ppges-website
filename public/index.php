@@ -19,8 +19,8 @@
 
           echo '<div class="col-md-9"><div class="card bg-dark">';
           printf(
-            '<a href="%s"><img class="card-img" src="%s" alt="%s"></a>',
-            $base_url . $cursor[0]->permalink,
+            '<a href="%s"><img class="card-img gradient" src="%s" alt="%s"></a>',
+            $base . $cursor[0]->permalink,
             (isset($cursor[0]->img_url)) ? $cursor[0]->img_url : $img_gen . $cursor[0]->title,
             $cursor[0]->title
           ); 
@@ -29,7 +29,7 @@
           echo '<div class="col-md-3">';
           foreach ($cursor as $i => $document) {
             if ($i > 0) {
-              echo '<div class="row my-3"><div class="col-sm"><div class="card bg-dark">';
+              echo '<div class="row my-3"><div class="col-sm"><div class="card bg-dark gradient">';
               printf(
                 '<a href="%s"><img class="card-img" src="%s" alt="%s"></a>',
                 $base_url . $document->permalink,
@@ -62,8 +62,8 @@
           for ($i = 0; $i < 4; $i++) {
             echo '<div class="card">';
 
-            printf('<a href=%s/%s>', $discover_links[$items[$i]]->permalink, $base_url);
-            echo '<img class="card-img-top" src="',
+            printf('<a href=%s/%s>', $base_url, $discover_links[$items[$i]]->permalink);
+            echo '<img class="card-img-top gradient" src="',
                  $img_gen, $discover_links[$items[$i]]->name,
                  '" alt="', $discover_links[$items[$i]]->name, '">';
             printf('<div class="card-body"><h6 class="card-text">%s</h6></div>',
