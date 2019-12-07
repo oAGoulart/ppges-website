@@ -21,10 +21,10 @@
         <!-- List of Professors -->
         <div class="col-md-9">
           <?php
-            echo '<h1>', $page_title '</h1><br>';
+            echo '<h1>', $page_title, '</h1><br>';
 
             foreach ($cursor as $document) {
-              echo '<div class="card">';
+              echo '<div class="card my-3 p-3 post-card">';
               echo markdown2html($document->body);
               echo '</div>';
             }
