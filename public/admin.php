@@ -10,6 +10,7 @@
       <button id="adminLogout" class="btn btn-primary" type="button">Sair</button>
     </div>
     <div id="loginCard" class="container">
+      <img src="assets/images/logo.png" class="img-fluid" alt="PPGES">
       <form id="adminLogin" class="p-3 border align-middle">
         <div class="form-row align-items-center">
           <div class="col-12">
@@ -28,7 +29,12 @@
             </div>
           </div>
         </div>
-        <button id="submitLogin" class="btn btn-primary" type="button">Entrar</button>
+        <button id="submitLogin" class="btn btn-primary" type="button">
+          Entrar
+          <div id="submitLoad" class="spinner-border text-primary d-none" role="status">
+            <span class="sr-only">Carregando...</span>
+          </div>
+        </button>
       </form>
     </div>
     <div id="console" class="container">

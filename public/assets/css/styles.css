@@ -226,7 +226,7 @@ footer .list-group-item {
   max-width: 90vw;
 }
 
-#adminLogin {
+#loginCard {
   width: 22vw;
   margin: auto;
 }
@@ -236,7 +236,7 @@ footer .list-group-item {
     max-width: 1200px;
   }
 
-  #adminLogin {
+  #loginCard {
     width: 264px;
   }
 }

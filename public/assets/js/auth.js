@@ -13,8 +13,11 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var handleLogIn = function() {
-  var email = $('#inputEmail')[0];
-  var password = $('#inputPassword')[0];
+  let email = $('#inputEmail')[0];
+  let password = $('#inputPassword')[0];
+
+  $('#submitLoad')[0].classList.remove('d-none');
+  $('#submitLogin')[0].attr('disabled', true);
 
   if (email && password) {
     firebase.auth().signInWithEmailAndPassword(email.value, password.value).catch(function(error) {
@@ -33,9 +36,21 @@ var handleLogOut = function() {
     $('#logoutCard')[0].classList.add('d-none');
     $('#loginCard')[0].classList.remove('d-none');
     $('#console').html('');
+
+    Swal.fire(
+      'Sin Out!',
+      'Você saiu do painel de administrador.',
+      'success'
+    );
   }).catch(function(error) {
     console.log(error.code, error.message);
-    alert(error.message);
+
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Algo deu errado!',
+      footer: error.message
+    });
   });
 };
 
@@ -50,12 +65,19 @@ function initAuth() {
           if (req.status == 200) {
             $('#logoutCard')[0].classList.remove('d-none');
             $('#loginCard')[0].classList.add('d-none');
+            $('#submitLoad')[0].classList.add('d-none');
+            $('#submitLogin')[0].attr('disabled', false);
           }
 
           $('#console').html(req.responseText);
         };
         req.onerror = function() {
-          alert(req.responseText);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: req.responseText,
+            footer: 'Tente novamente!'
+          });
         };
 
         req.open(
@@ -68,7 +90,12 @@ function initAuth() {
         req.send();
       }).catch(function(error) {
         console.log(error.code, error.message);
-        alert(error.message);
+
+        Swal.fire(
+          'Erro!',
+          'Algo estranho aconteceu.',
+          'error'
+        );
       });
     }
   });
