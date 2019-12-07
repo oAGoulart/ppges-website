@@ -1,13 +1,7 @@
 <?php
   function filter_search($filter, $options, $database, $collection, $manager) {
-    if (!is_null($filter)) {
-      $q = new MongoDB\Driver\Query($filter, $options);
-      $cursor = $manager->executeQuery("${database}.${collection}", $q);
-
-      return $cursor;
-    }
-
-    return NULL;
+    $q = new MongoDB\Driver\Query($filter, $options);
+    return $manager->executeQuery("${database}.${collection}", $q);
   }
 
   function query_search($query, $options, $database, $collection, $manager) {
@@ -22,24 +16,20 @@
 
   function filter_count($filter, $database, $collection, $manager)
   {
-    if ($filter != []) {
-      $options = [
-        'allowPartialResults' => true,
-        'projection' => ['_id' => 1]
-      ];
+    $options = [
+      'allowPartialResults' => true,
+      'projection' => ['_id' => 1]
+    ];
 
-      $cursor = filter_search($filter, $options, $database, $collection, $manager);
+    $cursor = filter_search($filter, $options, $database, $collection, $manager);
 
-      // Count number of documents returned
-      $count = 0;
-      foreach ($cursor as $document) {
-        $count++;
-      }
-      
-      return $count;
+    // Count number of documents returned
+    $count = 0;
+    foreach ($cursor as $document) {
+      $count++;
     }
-
-    return 0;
+      
+    return $count;
   }
 
   function query_count($query, $database, $collection, $manager)
