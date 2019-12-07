@@ -6,7 +6,11 @@
   <!-- Sweet Alert 2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
+  <!-- Default Scripts -->
   <?php
+    echo '<script src="', $base_url, '/assets/js/gradient.js"></script>';
+    echo '<script src="', $base_url, '/assets/js/lang.js"></script>';
+
     if (preg_match('~^/admin.*~', $_SERVER['REQUEST_URI']) == TRUE) {
       echo '<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>';
       echo '<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>';
