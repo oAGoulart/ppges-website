@@ -23,10 +23,8 @@
           <?php
             echo '<h1>', $page_title, '</h1><br>';
 
-            echo '<div class="list-group">';
-
             foreach ($cursor as $document) {
-              echo '<div class="list-group-item">';
+              echo '<div class="card my-3 p-3 post-card">';
               echo markdown2html($document->body);
               echo '</div>';
             }
