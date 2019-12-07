@@ -8,7 +8,11 @@
   if ($permalink != '') {
     $page_title = ucfirst($permalink);
   } else {
-    $page_title = sprintf('%s', $category != '' ? 'Publicações em ' . $category : 'Posts');
+    if ($type != '') {
+      $page_title = 'Publicações em ' . $type;
+    } else {
+      $page_title = sprintf('%s', ($category != '') ? 'Publicações em ' . $category : 'Posts');
+    }
   }
 
   require_once '../vendor/autoload.php';

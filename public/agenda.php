@@ -1,14 +1,18 @@
 <?php
   $category = (isset($_GET['category'])) ? $_GET['category'] : '';
 
-  $page_title = 'Agenda';
+  if ($category == '') {
+    $page_title = 'Agenda';
+  } else {
+    $page_title = ucfirst($category) . 'na agenda';
+  }
 
   require_once '../vendor/autoload.php';
   require 'assets/templates/head.php';
   require "assets/templates/${lang}/non_sticky_nav.php";
   require "assets/templates/${lang}/sticky_header.php";
 
-  $cursor = filter_search([], [], $database, 'agenda', $manager);
+  $cursor = filter_search(['category' => $category], [], $database, 'agenda', $manager);
 ?>
 
   <!-- Page's Contents -->

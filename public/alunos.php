@@ -6,7 +6,7 @@
   require "assets/templates/${lang}/non_sticky_nav.php";
   require "assets/templates/${lang}/sticky_header.php";
 
-  $cursor = filter_search(['type' => 'student'], [], $database, 'academics', $manager);
+  $cursor = filter_search(['type' => 'aluno'], [], $database, 'academics', $manager);
 ?>
 
   <!-- Page's Contents -->
