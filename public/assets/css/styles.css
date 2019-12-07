@@ -30,7 +30,8 @@ th {
   word-break: break-all;
 }
 
-.post-card {
+.post-card,
+.post-card img {
   border-radius: 0;
 }
 
