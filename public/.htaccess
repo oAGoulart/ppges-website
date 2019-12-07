@@ -9,9 +9,9 @@ RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ %1/$1 [R=301]
 
 # Redirect pretty urls to proper .php files
-RewriteRule ^agenda(/(.*))?$ /agenda.php?category=$2 [END]
-RewriteRule ^(pesquisas|informes)(/(.*))?$ /posts.php?category=$1&permalink=$3 [END]
-RewriteRule ^(contato|curso|sobre|identidade|mapa|ajuda) /static.php?page=$1 [END]
+RewriteRule ^agenda(/(.*))?$ /agenda.php?category=$2 [END,QSA,NC]
+RewriteRule ^(pesquisas|informes)(/(.*))?$ /posts.php?category=$1&permalink=$3 [END,QSA,NC]
+RewriteRule ^(contato|curso|sobre|identidade|mapa|ajuda) /static.php?page=$1 [END,QSA,NC]
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^.]+?)\/?$ /$1.php [END]
