@@ -32,7 +32,7 @@
             echo '<h1>', $page_title, '</h1><br>';
 
             foreach ($cursor as $document) {
-              echo '<div class="card my-3 p-3 post-card">';
+              echo '<div class="card my-3 post-card">';
               if (isset($document->img_url)) {
                 printf(
                   '<img class="card-img-top" src="%s" alt="%s">',
@@ -40,7 +40,7 @@
                   $document->title
                 );
               }
-              echo markdown2html($document->body);
+              echo '<div class="card-body">', markdown2html($document->body), '</div>';
               echo '</div>';
             }
           ?>

@@ -54,13 +54,6 @@
 
     if ($count != 0) {
       foreach ($cursor as $document) {
-        if (isset($document->img_url)) {
-          printf(
-            '<img id="loginLogo" src="%s" class="img-fluid p-5 border bg-light" alt="%s">',
-            $document->img_url,
-            $document->title
-          );
-        }
         echo '<a href="', $base_url, '"', $document->category, '/',
              $document->permalink, '"><h2>', $document->title, '</h2></a>';
         echo markdown2html(substr($document->body, 0, 500) . ' <mark> ... </mark>');
