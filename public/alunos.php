@@ -24,12 +24,17 @@
             echo '<h1>', $page_title, '</h1><br>';
 
             foreach ($cursor as $document) {
-              echo '<div class="card my-3 p-3 post-card">';
-              echo markdown2html($document->body);
-              echo '</div>';
+              echo '<div class="card my-3 p-3 post-card"><div class="media">';
+              if (isset($document->img_url)) {
+                printf(
+                  '<img class="align-self-start mr-3" src="%s" alt="%s">',
+                  $document->img_url,
+                  $document->name
+                );
+              }
+              echo '<div class="media-body">', markdown2html($document->body), '</div>';
+              echo '</div></div>';
             }
-
-            echo '</div>';
           ?>
         </div>
       </div>

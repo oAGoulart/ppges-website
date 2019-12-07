@@ -33,6 +33,13 @@
 
             foreach ($cursor as $document) {
               echo '<div class="card my-3 p-3 post-card">';
+              if (isset($document->img_url)) {
+                printf(
+                  '<img class="card-img-top" src="%s" alt="%s">',
+                  $document->img_url,
+                  $document->title
+                );
+              }
               echo markdown2html($document->body);
               echo '</div>';
             }
