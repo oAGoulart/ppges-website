@@ -40,7 +40,7 @@
     $pages = $count / $page_size;
 
     echo '<main class="my-5"><div class="container"><div class="row"><div class="col-md-12">';
-    printf('<h1>%s: (%i resultados)</h1><br>', ($category != '') ? 'Publicações em ' . $category : 'Posts', $count);
+    printf('<h1>%s: (%d resultados)</h1><br>', ($category != '') ? 'Publicações em ' . $category : 'Posts', $count);
 
     if ($count != 0) {
       foreach ($cursor as $document) {

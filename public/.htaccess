@@ -6,17 +6,16 @@ RewriteBase /
 
 # Redirect any www requests
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ /%1/$1 [R=301]
+RewriteRule ^(.*)$ %1/$1 [R=301]
 
 # Redirect pretty urls to proper .php files
-RewriteRule ^agenda(/(.*))?$ /agenda.php?category=$2 [L,END]
-RewriteRule ^informes(/(.*))?$ /posts.php?category=informes&permalink=$2 [L,END]
-
-RewriteRule ^pesquisas(/(.*))?$ /posts.php?category=pesquisas&permalink=$2 [L,END]
-RewriteRule ^(contato|curso|sobre|identidade|mapa|ajuda) /static.php?page=$1 [L,END]
+RewriteRule ^agenda(/(.*))?$ /agenda.php?category=$2 [END]
+RewriteRule ^informes(/(.*))?$ /posts.php?category=informes&permalink=$2 [END]
+RewriteRule ^pesquisas(/(.*))?$ /posts.php?category=pesquisas&permalink=$2 [END]
+RewriteRule ^(contato|curso|sobre|identidade|mapa|ajuda) /static.php?page=$1 [END]
 
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^.]+?)\/?$ /$1.php [L,END]
+RewriteRule ^([^.]+?)\/?$ /$1.php [END]
 
 # Error handling
 ErrorDocument 400 /error.php
