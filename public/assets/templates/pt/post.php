@@ -15,7 +15,7 @@
                 }
 
                 if ($i < $path_size-1) {
-                  echo '<a href="', $next_link, '">', $path, '</a>';
+                  echo '<a href="', $next_link, '">', ucfirst($path), '</a>';
                   echo '<span> / </span>';
 
                   $next_link .= $path_link[$i+1] . '/';
