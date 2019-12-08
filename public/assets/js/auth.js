@@ -57,7 +57,7 @@ var handleLogOut = function() {
 };
 
 // Look for changes in user status
-function initAuth() {
+$(window).load(function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       firebase.auth().currentUser.getIdToken().then(function(token) {
@@ -120,8 +120,4 @@ function initAuth() {
 
   $('#submitLogin')[0].addEventListener('click', handleLogIn, false);
   $('#adminLogout')[0].addEventListener('click', handleLogOut, false);
-}
-
-window.onload = function() {
-  initAuth();
-};
+});

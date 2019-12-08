@@ -20,6 +20,6 @@ function navbar() {
   );
 }
 
-window.onload = function() {
+$(window).load(function() {
   navbar();
-};
+});

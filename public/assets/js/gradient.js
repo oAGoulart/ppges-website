@@ -4,7 +4,7 @@ function randNum(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function gradient() {
+$(window).load(function() {
   $('.gradient').each(function() {
     let colors = [
       'rgb(113, 3, 133)',
@@ -26,8 +26,4 @@ function gradient() {
       + colors[randNum(0, 7)] + ')'
     );
   });
-}
-
-window.onload = function() {
-  gradient();
-};
+});
