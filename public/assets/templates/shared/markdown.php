@@ -28,7 +28,7 @@
     if (isset($_GET['p'])) {
       return preg_replace("/([\x26\?])p=" . $curr_number . "*/i", '${1}p=' . $new_number, $request);
     } else {
-      return $base_url . "?p=${new_number}";
+      return $request . "?p=${new_number}";
     }
   }
 
