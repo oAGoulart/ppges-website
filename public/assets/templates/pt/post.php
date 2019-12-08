@@ -20,7 +20,7 @@
 
                   $next_link .= $path_link[$i+1] . '/';
                 } else {
-                  echo '<a href="', $next_link, '">', ucfirst($path), '</a>';
+                  echo '<span>', $path, '</span>';
                 }
               }
               echo '<hr>';
