@@ -35,7 +35,8 @@
               echo '<div class="card my-3 post-card">';
               if (isset($document->img_url)) {
                 printf(
-                  '<img class="card-img-top" src="%s" alt="%s">',
+                  '<a href="%s"><img class="card-img-top" src="%s" alt="%s"></a>',
+                  (isset($document->link)) ? $document->name : '#',
                   $document->img_url,
                   $document->title
                 );

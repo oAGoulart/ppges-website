@@ -20,13 +20,22 @@ var handleLogIn = function() {
   $('#submitLogin:eq(0)').attr('disabled', true);
 
   if (email && password) {
-    firebase.auth().signInWithEmailAndPassword(email.value, password.value).catch(function(error) {
-      console.log(error.code, error.message);
+    Swal.fire({
+      title: 'Carregando',
+      showConfirmButton: false,
+      onBeforeOpen: function() {
+        Swal.showLoading()
+        return firebase.auth()
+          .signInWithEmailAndPassword(email.value, password.value)
+          .catch(function(error) {
+            console.log(error.code, error.message);
 
-      var msg = $('#emailHelp')[0];
-      msg.classList.remove('text-muted');
-      msg.classList.add('text-danger');
-      msg.innerHTML = error.message;
+            var msg = $('#emailHelp')[0];
+            msg.classList.remove('text-muted');
+            msg.classList.add('text-danger');
+            msg.innerHTML = error.message;
+        });
+      }
     });
   }
 };
@@ -38,7 +47,7 @@ var handleLogOut = function() {
     $('#console').html('');
 
     Swal.fire(
-      'Sin Out!',
+      'Desconectado!',
       'Você saiu do painel de administrador.',
       'success'
     );
@@ -47,7 +56,7 @@ var handleLogOut = function() {
 
     Swal.fire({
       icon: 'error',
-      title: 'Oops...',
+      title: 'Eita...',
       text: 'Algo deu errado!',
       footer: error.message
     });
@@ -74,7 +83,7 @@ function initAuth() {
         req.onerror = function() {
           Swal.fire({
             icon: 'error',
-            title: 'Oops...',
+            title: 'Oh...',
             text: req.responseText,
             footer: 'Tente novamente!'
           });
