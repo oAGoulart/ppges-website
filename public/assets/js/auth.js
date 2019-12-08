@@ -20,23 +20,15 @@ var handleLogIn = function() {
   $('#submitLogin:eq(0)').attr('disabled', true);
 
   if (email && password) {
-    Swal.fire({
-      title: 'Carregando',
-      showConfirmButton: false,
-      onBeforeOpen: function() {
-        Swal.showLoading();
-        firebase.auth()
-          .signInWithEmailAndPassword(email.value, password.value)
-          .catch(function(error) {
-            console.log(error.code, error.message);
+    firebase.auth()
+      .signInWithEmailAndPassword(email.value, password.value)
+      .catch(function(error) {
+        console.log(error.code, error.message);
 
-            var msg = $('#emailHelp')[0];
-            msg.classList.remove('text-muted');
-            msg.classList.add('text-danger');
-            msg.innerHTML = error.message;
-        });
-        Swal.close();
-      }
+        var msg = $('#emailHelp')[0];
+        msg.classList.remove('text-muted');
+        msg.classList.add('text-danger');
+        msg.innerHTML = error.message;
     });
   }
 };
@@ -69,7 +61,7 @@ function initAuth() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       firebase.auth().currentUser.getIdToken().then(function(token) {
-        var req = new XMLHttpRequest();
+        let req = new XMLHttpRequest();
 
         req.onload = function() {
           if (req.status == 200) {
@@ -80,7 +72,9 @@ function initAuth() {
           }
 
           $('#console').html(req.responseText);
+          Swal.close();
         };
+
         req.onerror = function() {
           Swal.fire({
             icon: 'error',
@@ -97,7 +91,19 @@ function initAuth() {
         );
 
         req.setRequestHeader('authorization', 'Bearer ' + token);
-        req.send();
+
+        Swal.fire({
+          title: 'Carregando',
+          showConfirmButton: false,
+          allowOutsideClick: function() {
+            return !Swal.isLoading();
+          },
+          onBeforeOpen: function() {
+            Swal.showLoading();
+
+            req.send();
+          }
+        });
       }).catch(function(error) {
         console.log(error.code, error.message);
 
