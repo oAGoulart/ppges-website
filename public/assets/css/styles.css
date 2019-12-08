@@ -133,7 +133,7 @@ main {
   background-color: rgb(240, 240, 240);
 }
 
-.discover-links:not(:first-of-type) {
+.discover-links {
   margin-top: 3.5rem;
   list-style: none;
 }
@@ -144,7 +144,7 @@ ul.discover-links ul {
   padding: .75rem 1.25rem;
 }
 
-.title-anchor:not(:first-of-type) {
+.title-anchor {
   padding-top: 3.5rem;
 }
 
