@@ -9,7 +9,6 @@
   <!-- Default Scripts -->
   <?php
     echo '<script src="', $base_url, '/assets/js/gradient.js"></script>';
-    echo '<script src="', $base_url, '/assets/js/lang.js"></script>';
 
     if (preg_match('~^/admin.*~', $_SERVER['REQUEST_URI']) == TRUE) {
       echo '<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>';
@@ -18,6 +17,7 @@
       echo '<script src="', $base_url, '/assets/js/auth.js"></script>';
     } else {
       echo '<script src="', $base_url, '/assets/js/navbar.js"></script>';
+      echo '<script src="', $base_url, '/assets/js/lang.js"></script>';
     }
   ?>
 </body>
