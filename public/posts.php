@@ -37,7 +37,7 @@
       'allowPartialResults' => true,
       'limit' => $page_size,
       'skip' => ($page_number - 1) * $page_size,
-      'sort' => ['_id' => 1]
+      'sort' => ['_id' => -1]
     ];
 
     if ($category != '') {

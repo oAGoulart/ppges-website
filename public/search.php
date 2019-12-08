@@ -14,7 +14,7 @@
     'allowPartialResults' => true,
     'limit' => $page_size,
     'skip' => ($page_number - 1) * $page_size,
-    'sort' => ['_id' => 1]
+    'sort' => ['_id' => -1]
   ];
 
   $cursor = query_search($query, $options, $database, $collection, $manager);
