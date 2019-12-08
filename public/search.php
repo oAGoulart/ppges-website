@@ -19,7 +19,7 @@
 
   $cursor = query_search($query, $options, $database, $collection, $manager);
   $count = query_count($query, $database, $collection, $manager);
-  $pages = $count / $page_size;
+  $pages = ceil($count / $page_size);
 ?>
 
   <!-- Page's Contents -->
