@@ -30,10 +30,9 @@
           </div>
         </div>
         <button id="submitLogin" class="btn btn-primary" type="button">
+          <span id="submitLoad" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true">
+          </span>
           Entrar
-          <div id="submitLoad" class="spinner-border text-primary d-none" role="status">
-            <span class="sr-only">Carregando...</span>
-          </div>
         </button>
       </form>
     </div>
