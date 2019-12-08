@@ -24,8 +24,8 @@ var handleLogIn = function() {
       title: 'Carregando',
       showConfirmButton: false,
       onBeforeOpen: function() {
-        Swal.showLoading()
-        return firebase.auth()
+        Swal.showLoading();
+        firebase.auth()
           .signInWithEmailAndPassword(email.value, password.value)
           .catch(function(error) {
             console.log(error.code, error.message);
@@ -35,6 +35,8 @@ var handleLogIn = function() {
             msg.classList.add('text-danger');
             msg.innerHTML = error.message;
         });
+
+        return true;
       }
     });
   }
