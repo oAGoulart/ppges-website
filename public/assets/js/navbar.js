@@ -20,6 +20,6 @@ function navbar() {
   );
 }
 
-$(window).load(function() {
+$(document).ready(function() {
   navbar();
 });
