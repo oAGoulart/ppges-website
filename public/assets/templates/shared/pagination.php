@@ -99,7 +99,7 @@
     printf(
       '<li class="page-item %s"><a class="page-link" href="%s">Próxima</a></li>',
       ($page_number >= $pages) ? 'disabled' : '',
-      ($page_number < $pages) ? change_page_number($base_url, $page_number, $prev_page) : '#'
+      ($page_number < $pages) ? change_page_number($base_url, $page_number, $next_page) : '#'
     );
 
     if ($page_number < $pages) {
