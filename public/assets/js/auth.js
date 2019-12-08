@@ -93,7 +93,9 @@ function initAuth() {
         req.setRequestHeader('authorization', 'Bearer ' + token);
 
         Swal.fire({
+          icon: 'info',
           title: 'Carregando',
+          text: 'Você está entrando no painel de administrador.'
           showConfirmButton: false,
           allowOutsideClick: function() {
             return !Swal.isLoading();
