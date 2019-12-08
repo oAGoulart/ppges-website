@@ -4,7 +4,7 @@
       <div class="row">
         <p>
           <?php
-            $path_link = explode($_SERVER['REQUEST_URI']);
+            $path_link = explode('/', $_SERVER['REQUEST_URI']);
             $next_link = '/';
             $path_size = count($path_link);
 
