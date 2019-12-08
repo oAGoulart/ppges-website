@@ -1,5 +1,5 @@
 <?php
-  $prev_page = $page_number + 1;
+  $prev_page = $page_number - 1;
   $next_page = $page_number + 1;
 
   if ($pages > 1) {
@@ -16,7 +16,6 @@
       ($page_number > 1) ? change_page_number($base_url, $page_number, $prev_page) : '#'
     );
 
-    $max = ($pages - $page_number <= 4) ? $pages : $page_number + 4;
     if ($pages <= 10) {
       for ($i = 1; $i <= $pages; $i++) {
         if ($i == $page_number) {
@@ -98,14 +97,14 @@
     }
 
     printf(
-      '<li class="page-item %s"><a class="page-link" href="%s">Anterior</a></li>',
+      '<li class="page-item %s"><a class="page-link" href="%s">Próxima</a></li>',
       ($page_number >= $pages) ? 'disabled' : '',
       ($page_number < $pages) ? change_page_number($base_url, $page_number, $prev_page) : '#'
     );
 
     if ($page_number < $pages) {
       $request = change_page_number($base_url, $page_number, $pages);
-      echo '<li class="page-item"><a class="page-link" href="', $request, '">Início</a></li>';
+      echo '<li class="page-item"><a class="page-link" href="', $request, '">Última</a></li>';
     }
           
     echo '</ul></nav>';
