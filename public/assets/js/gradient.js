@@ -2,7 +2,7 @@ function randNum(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
   $('.gradient').each(function() {
     let colors = [
       'rgb(113, 3, 133)',
@@ -19,9 +19,9 @@ $(document).ready(function () {
     $(this).css(
       'background-image',
       'linear-gradient(141deg, '
-      + colors[randNum(0, 8)] + ' '
+      + colors[randNum(0, 7)] + ' '
       + percentage + '%, '
-      + colors[randNum(0, 8)] + ')'
+      + colors[randNum(0, 7)] + ')'
     );
   });
 });

@@ -27,8 +27,7 @@
               echo '<div class="card my-3 p-3 post-card"><div class="media">';
               if (isset($document->img_url)) {
                 printf(
-                  '<a href="%s"><img width="128" height="128" class="align-self-start mr-3" src="%s" alt="%s"></a>',
-                  (isset($document->link)) ? $document->name : '#',
+                  '<img width="128" height="128" class="align-self-start mr-3" src="%s" alt="%s">',
                   $document->img_url,
                   $document->name
                 );
