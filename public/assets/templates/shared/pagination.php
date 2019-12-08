@@ -7,7 +7,7 @@
 
     if ($page_number > 1) {
       $request = change_page_number($base_url, $page_number, 1);
-      echo '<li class="page-item"><a class="page-link" href="', $request, '">Início</a></li>"';
+      echo '<li class="page-item"><a class="page-link" href="', $request, '">Início</a></li>';
     }
 
     printf(
