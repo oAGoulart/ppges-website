@@ -36,7 +36,8 @@
     $options = [
       'allowPartialResults' => true,
       'limit' => $page_size,
-      'skip' => ($page_number - 1) * $page_size
+      'skip' => ($page_number - 1) * $page_size,
+      'sort' => ['_id' => 1]
     ];
 
     if ($category != '') {
@@ -54,7 +55,7 @@
 
     if ($count != 0) {
       foreach ($cursor as $document) {
-        echo '<a href="', $base_url, '"', $document->category, '/',
+        echo '<a href="', $base_url, (isset($document->category)) ? '/' . $document->category . '/' : '/',
              $document->permalink, '"><h2>', $document->title, '</h2></a>';
         echo markdown2html(substr($document->body, 0, 500) . ' <mark> ... </mark>');
         echo '<hr>';

@@ -15,6 +15,10 @@
   $font_size = (isset($_GET['fontSize'])) ? $_GET['fontSize'] : 100;
   $text = (isset($_GET['text'])) ? $_GET['text'] : 'NO IMAGE FOUND';
 
+  if (strlen($text) > 22) {
+    $text = substr($text, 0, 22) . '...';
+  }
+
   $text_size = imagettfbbox($font_size, 0, $font, $text);
   $text_width = $text_size[2] - $text_size[0];
   $text_height = $text_size[7] - $text_size[1];

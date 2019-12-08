@@ -13,7 +13,8 @@
   $options = [
     'allowPartialResults' => true,
     'limit' => $page_size,
-    'skip' => ($page_number - 1) * $page_size
+    'skip' => ($page_number - 1) * $page_size,
+    'sort' => ['_id' => 1]
   ];
 
   $cursor = query_search($query, $options, $database, $collection, $manager);
@@ -32,7 +33,8 @@
 
             if ($count != 0) {
               foreach ($cursor as $document) {
-                echo '<a href="', $base_url, '/posts/', $document->permalink, '"><h2>', $document->title, '</h2></a>';
+                echo '<a href="', $base_url, (isset($document->category)) ? '/' . $document->category . '/' : '/',
+                     $document->permalink, '"><h2>', $document->title, '</h2></a>';
                 echo markdown2html(substr($document->body, 0, 500), ' <mark> ... </mark>');
                 echo '<hr>';
               }

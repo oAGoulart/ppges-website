@@ -12,7 +12,8 @@
         <?php
           $options = [
             'allowPartialResults' => true,
-            'limit' => 4
+            'limit' => 4,
+            'sort' => ['_id' => 1]
           ];
 
           $cursor = filter_search([], $options, $database, $collection, $manager)->toArray();
