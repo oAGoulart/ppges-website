@@ -1,8 +1,10 @@
+'use strict';
+
 function randNum(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-$(document).ready(function() {
+function gradient() {
   $('.gradient').each(function() {
     let colors = [
       'rgb(113, 3, 133)',
@@ -24,4 +26,8 @@ $(document).ready(function() {
       + colors[randNum(0, 7)] + ')'
     );
   });
-});
+}
+
+window.onload = function() {
+  gradient();
+};

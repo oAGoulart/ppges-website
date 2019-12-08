@@ -1,5 +1,6 @@
-// Main loop
-function main() {
+'use strict';
+
+function navbar() {
   var nav = $('#nav')[0];
   var offset = nav.offsetTop + nav.offsetHeight;
 
@@ -13,13 +14,12 @@ function main() {
   // Repeat again after 500ms
   setTimeout(
     function() {
-      main();
+      navbar();
     },
     500
   );
 }
 
-// Call main function on load
 window.onload = function() {
-  main();
+  navbar();
 };
