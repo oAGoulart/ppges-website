@@ -10,7 +10,7 @@
   <?php
     echo '<script src="', $base_url, '/assets/js/gradient.js"></script>';
 
-    if (preg_match('~^/admin.*~', $_SERVER['REQUEST_URI']) == TRUE) {
+    if (preg_match('~^/admin.*~', $_SERVER['REQUEST_URI'])) {
       echo '<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>';
       echo '<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>';
 
