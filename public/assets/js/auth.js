@@ -35,8 +35,7 @@ var handleLogIn = function() {
             msg.classList.add('text-danger');
             msg.innerHTML = error.message;
         });
-
-        return true;
+        Swal.close();
       }
     });
   }
