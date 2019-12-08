@@ -4,7 +4,7 @@ function randNum(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-$(window).load(function() {
+$(document).ready(function() {
   $('.gradient').each(function() {
     let colors = [
       'rgb(113, 3, 133)',

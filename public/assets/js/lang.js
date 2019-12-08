@@ -8,7 +8,7 @@ function setCookie(name, value, days) {
   document.cookie = name + '=' + value + '; ' + expires + '; path=/';
 }
 
-$(window).load(function() {
+$(document).ready(function() {
   $('#langPt')[0].addEventListener('click', function(){setCookie('lang', 'pt-BR', 30);}, false);
   $('#langEn')[0].addEventListener('click', function(){setCookie('lang', 'en-US', 30);}, false);
 });
