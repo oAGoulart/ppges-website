@@ -35,7 +35,11 @@
               foreach ($cursor as $document) {
                 echo '<a href="', $base_url, (isset($document->category)) ? '/' . $document->category . '/' : '/',
                      $document->permalink, '"><h2>', $document->title, '</h2></a>';
-                echo markdown2html(substr($document->body, 0, 500), ' <mark> ... </mark>');
+                if (strlen($document->body) >= 500) {
+                  echo markdown2html(substr($document->body, 0, 500) . ' <mark> ... </mark>');
+                } else {
+                  echo markdown2html($document->body);
+                }
                 echo '<hr>';
               }
             } else {
