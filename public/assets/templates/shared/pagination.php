@@ -105,7 +105,7 @@
 
     if ($page_number < $pages) {
       $request = change_page_number($base_url, $page_number, $pages);
-      echo '<li class="page-item"><a class="page-link" href="', $request, '">Início</a></li>"';
+      echo '<li class="page-item"><a class="page-link" href="', $request, '">Início</a></li>';
     }
           
     echo '</ul></nav>';
