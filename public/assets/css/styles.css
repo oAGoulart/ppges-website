@@ -148,7 +148,8 @@ ul.discover-links ul {
   padding: .75rem 1.25rem;
 }
 
-.col-md-9 > .title-anchor {
+.col-md-9 > .title-anchor,
+.col-md-3 > .title-anchor {
   padding-top: 3.5rem;
 }
 
