@@ -21,7 +21,7 @@
           echo '<div class="col-md-9"><div class="card bg-dark">';
           printf(
             '<a href="%s"><img class="card-img gradient" src="%s" alt="%s"></a>',
-            $base . $cursor[0]->permalink,
+            $base_url . '/' . $cursor[0]->category . '/' . $cursor[0]->permalink,
             (isset($cursor[0]->img_url)) ? $cursor[0]->img_url : $img_gen . $cursor[0]->title,
             $cursor[0]->title
           ); 
@@ -33,7 +33,7 @@
               echo '<div class="row my-3"><div class="col-sm"><div class="card bg-dark gradient">';
               printf(
                 '<a href="%s"><img class="card-img" src="%s" alt="%s"></a>',
-                $base_url . $document->permalink,
+                $base_url . '/' . $cursor[0]->category . '/' . $document->permalink,
                 (isset($document->img_url)) ? $document->img_url : $img_gen . $document->title,
                 $document->title
               ); 

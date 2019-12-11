@@ -4,7 +4,7 @@
   if ($category == '') {
     $page_title = 'Agenda';
   } else {
-    $page_title = ucfirst($category) . 'na agenda';
+    $page_title = ucfirst($category) . ' na agenda';
   }
 
   require_once '../vendor/autoload.php';

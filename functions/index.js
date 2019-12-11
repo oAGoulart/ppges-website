@@ -43,7 +43,24 @@ app.use(validateToken);
 app.get('/console', (req, res) => {
   if (req.user.uid) {
     res.send(`
-      Hello!
+      <div class="row my-5">
+        <div class="col-md-3">
+          <div class="card bg-light border">
+            Manage Posts
+          </div>
+          <div class="card bg-light border">
+            Update the Agenda
+          </div>
+          <div class="card bg-light border">
+            Change Entries
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="card bg-light border">
+            A analytics tool...
+          </div>
+        </div>
+      </div>
     `);
   }
 });
