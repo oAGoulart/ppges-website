@@ -45,18 +45,18 @@ app.get('/console', (req, res) => {
     res.send(`
       <div class="row my-5">
         <div class="col-md-3">
-          <div class="card bg-light border">
+          <div class="card bg-light border p-3 my-2">
             Manage Posts
           </div>
-          <div class="card bg-light border">
+          <div class="card bg-light border p-3 my-2">
             Update the Agenda
           </div>
-          <div class="card bg-light border">
+          <div class="card bg-light border p-3 my-2">
             Change Entries
           </div>
         </div>
         <div class="col-md-9">
-          <div class="card bg-light border">
+          <div id="analytics" class="card bg-light border p-3 my-2">
             A analytics tool...
           </div>
         </div>

@@ -35,6 +35,10 @@ th {
   border-radius: 0;
 }
 
+#analytics {
+  height: 50vh;
+}
+
 /* Navbar and Header of the Page */
 nav:not(#pagination) {
   background-color: rgb(0, 144, 69);
@@ -144,7 +148,7 @@ ul.discover-links ul {
   padding: .75rem 1.25rem;
 }
 
-.title-anchor {
+.col-md-9 > .title-anchor {
   padding-top: 3.5rem;
 }
 
